@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "AnagraficaDealerExportIS", "AnagraficaDealerISExport\AnagraficaDealerExportIS.dtproj", "{4F42D467-3513-4641-A34A-5B1376DB1C64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F42D467-3513-4641-A34A-5B1376DB1C64}.Development|Default.ActiveCfg = Development
+		{4F42D467-3513-4641-A34A-5B1376DB1C64}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

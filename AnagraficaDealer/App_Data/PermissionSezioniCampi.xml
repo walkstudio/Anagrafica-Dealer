@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Value>
+  <Permission PermissionId="1" Descrizione="Non Visibile"/>
+  <Permission PermissionId="2" Descrizione="Visibile - Lettura"/>
+  <Permission PermissionId="3" Descrizione="Visibile - Scrittura"/>
+</Value>

@@ -1,0 +1,212 @@
+﻿body {
+}
+
+.stepNumber {
+    text-align: center;
+    float: left;
+    width: 170px;
+    padding: 5px 0;
+    border: solid 1px #fff;
+    cursor: pointer;
+}
+.linkCompleted {
+    text-decoration: none;
+    color: #FFF;
+    background-color: darkgray;
+    cursor: pointer;
+    font-size: x-small;
+}
+.linkSelected {
+    vertical-align: bottom;
+    font-weight: bolder;
+    display: block;
+    text-align: center;
+    font-size: x-small;
+    text-decoration: none;
+    color: #E60001;
+}
+.linkUnselected {
+    vertical-align: bottom;
+    font-weight: bolder;
+    display: block;
+    text-align: center;
+    font-size: x-small;
+    text-decoration: none;
+    color: black;
+}
+
+.lblChoices {
+    text-decoration: none;
+    color: Red;
+    cursor: pointer;
+    font-size: 8pt;
+    font-weight: bold;
+}
+.divSelected {
+    float: left;
+    margin-right: 5px;
+    color: #E60001;
+    cursor: pointer;
+    background-color: white;
+
+}
+.divUnselected {
+    float: left;
+    margin-right: 5px;
+    /*color: black;*/
+    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+#div_0 {
+    width: 970px;
+    height: 400px;
+    padding: 15px;
+}
+#div_1 {
+    width: 970px;
+    height: 400px;
+    padding: 15px;
+}
+#div_2 {
+    width: 970px;
+    height: 400px;
+    padding: 15px;
+}
+.btnHidden {
+    visibility: hidden;
+}
+.spanChoice {
+    color: black;
+    font-weight: bold;
+}
+.divWaitPopupDisplay {
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.divRowSubMenuRicerca {
+    width: 100%;
+    height: 23px;
+    padding-top: 5px;
+    border-bottom: 1px solid #E6E7E8;
+}
+
+
+.msgErrore
+{
+    color: Red;
+}
+.tabRaffinaRicercaSelected {
+    border-bottom: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+}
+.tabRaffinaRicercaUnselected {
+    border-bottom: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
+.tabRaffinaRicercaUnselected:hover {
+    border-bottom-color:grey;
+}
+
+
+/* popup_box DIV-Styles*/
+#popup_box { 
+    display:none; /* Hide the DIV */
+    position:fixed;  
+    _position:absolute; /* hack for internet explorer 6 */  
+    /*height:300px;*/  
+    /*width:600px;*/  
+    height:100%; 
+    width:100%;  
+    background:#FFFFFF;  
+    left: 300px;
+    top: 150px;
+    z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+    margin-left: 15px;  
+    
+    /* additional features, can be omitted */
+    border:2px solid #ff0000;      
+    padding:15px;  
+    font-size:15px;  
+    -moz-box-shadow: 0 0 5px #ff0000;
+    -webkit-box-shadow: 0 0 5px #ff0000;
+    box-shadow: 0 0 5px #ff0000;
+    
+}
+
+#container {
+    background: #d2d2d2; /*Sample*/
+    width:100%;
+    height:100%;
+}
+
+a{  
+cursor: pointer;  
+text-decoration:none;  
+} 
+
+/* This is for the positioning of the Close Link */
+#popupBoxClose {
+    font-size:20px;  
+    line-height:15px;  
+    right:5px;  
+    top:5px;  
+    position:absolute;  
+    color:#6fa5e2;  
+    font-weight:500;      
+}
+
+.buttonsRicerca{
+    cursor: pointer;
+    font-size:small;
+}
+.buttonsRicerca:hover
+{
+    color:red;
+    
+}
+
+.resultsRow{background-color: white;} 
+
+tr{
+    cursor:pointer;
+}
+
+#grvResults tr:hover {
+          background-color: #e8e5e5;
+        }
+
+.pagerStyle{
+    cursor:pointer;
+    font-size:10pt;
+    font-family:'Lucida Console',Consolas;
+    /*background-color:lightgray;*/
+}
+
+.ricercaSpace
+{
+    width:30px;
+}
+
+.cmbRicerca, .textbox
+{
+    font-family: Verdana,Arial,sans-serif !important;
+    font-size: 12px !important;
+
+}
+
+.txtAlignRight
+{
+    text-align: right;
+}

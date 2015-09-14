@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DealerUpdate>
+  <Dealer IDDealer="7">
+    <Variazione Campo="Operativita" DatoVecchio="Si" DatoNuovo="Fittizio" /> 
+    <Variazione Campo="DataTerminePreavviso" DatoVecchio="07/03/2015" DatoNuovo="07/03/2016" /> 
+    <Variazione Campo="Disdetta" DatoVecchio="Si da Vodafone" DatoNuovo="Si da Dealer" /> 
+    <Variazione Campo="CodiceFornitore" DatoVecchio="Codice Fornitore 7" DatoNuovo="Codice Fornitore 72" /> 
+    <Variazione Campo="GiorniPreavviso" DatoVecchio="30" DatoNuovo="20" /> 
+    <Variazione Campo="CodiceVogi" DatoVecchio="Codice VOGI 7" DatoNuovo="Codice VOGI 72" /> 
+    <Variazione Campo="DataContratto" DatoVecchio="07/01/2015" DatoNuovo="07/01/2016" /> 
+    <Variazione Campo="DataDisdetta" DatoVecchio="07/04/2015" DatoNuovo="07/04/2016" /> 
+    <Variazione Campo="Note" DatoVecchio="Nota 7" DatoNuovo="Nota 72" /> 
+    <Variazione Campo="DataInvioDisdetta" DatoVecchio="07/03/2015" DatoNuovo="07/03/2016" /> 
+    <Variazione Campo="Rea" DatoVecchio="Rea 7" DatoNuovo="Rea 72" /> 
+    <Variazione Campo="CFTitolare" DatoVecchio="" DatoNuovo="CF1" /> 
+    <Variazione Campo="MaterialeEspositivo" DatoVecchio="False" DatoNuovo="True" /> 
+    <Variazione Campo="Cluster" DatoVecchio="" DatoNuovo="BRONZE" /> 
+    <Variazione Campo="NomeTitolare" DatoVecchio="" DatoNuovo="Pino De Pinis" /> 
+    <Variazione Campo="TelefonoNegozio" DatoVecchio="" DatoNuovo="2222 2222222" /> 
+    <Variazione Campo="OrarioApertura" DatoVecchio="7:00|7:00|7:00|7:00|();7:00|7:00|7:00|7:00|();7:00|7:00|7:00|7:00|();7:00|7:00|7:00|7:00|();" DatoNuovo="8:00|12:00|14:00|20:00|(Lu|Ma|Me|Gi|Ve|);7:00|7:00|7:00|7:00|();7:00|7:00|7:00|7:00|();7:00|7:00|7:00|7:00|();" /> 
+    <Variazione Campo="Piu12" DatoVecchio="False" DatoNuovo="True" /> 
+    <Variazione Campo="TipoRemunerazione" DatoVecchio="STD" DatoNuovo="DEDICATA" /> 
+    <Variazione Campo="ModelloVendita" DatoVecchio="DOOR TO DOOR|TELEMKTG|" DatoNuovo="DOOR TO DOOR|PRESIDIO EVENTI|PROVA 1|TELEMKTG|" /> 
+  </Dealer>
+</DealerUpdate>

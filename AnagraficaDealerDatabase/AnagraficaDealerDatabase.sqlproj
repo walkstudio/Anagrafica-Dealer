@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>AnagraficaDealerDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{24c65453-ce57-4851-b638-a007968d1910}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>AnagraficaDealerDatabase</RootNamespace>
+    <AssemblyName>AnagraficaDealerDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Utenti\" />
+    <Folder Include="Utenti\Tables\" />
+    <Folder Include="Dealer\" />
+    <Folder Include="Dealer\Tables\" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\CleanDB" />
+    <Folder Include="Scripts\LoadData" />
+    <Folder Include="Scripts\LoadTestData" />
+    <Folder Include="Area\" />
+    <Folder Include="Area\Tables\" />
+    <Folder Include="Catene\" />
+    <Folder Include="Catene\Tables\" />
+    <Folder Include="DettaglioAgenti\" />
+    <Folder Include="DettaglioAgenti\Tables\" />
+    <Folder Include="Disdetta\" />
+    <Folder Include="Disdetta\Tables\" />
+    <Folder Include="InfoGenerali\" />
+    <Folder Include="InfoGenerali\Tables\" />
+    <Folder Include="Negozio\" />
+    <Folder Include="Negozio\Tables\" />
+    <Folder Include="Vendite\" />
+    <Folder Include="Vendite\Tables\" />
+    <Folder Include="Storico\" />
+    <Folder Include="Storico\Tables\" />
+    <Folder Include="Import\" />
+    <Folder Include="Import\Tables\" />
+    <Folder Include="Utility\" />
+    <Folder Include="Utility\Tables\" />
+    <Folder Include="Utenti\Stored Procedures\" />
+    <Folder Include="Import\Stored Procedures\" />
+    <Folder Include="Dealer\Stored Procedures\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security" />
+    <Folder Include="Utenti\Views\" />
+    <Folder Include="Dealer\Views\" />
+    <Folder Include="Export\" />
+    <Folder Include="Export\Tables\" />
+    <Folder Include="Export\Stored Procedures\" />
+    <Folder Include="Utility\Functions\" />
+    <Folder Include="Utility\Stored Procedures\" />
+    <Folder Include="Area\Stored Procedures\" />
+    <Folder Include="Negozio\Stored Procedures\" />
+    <Folder Include="Scripts\LoadDataPre" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Utenti\Tables\Accede.sql" />
+    <Build Include="Utenti\Tables\Utente.sql" />
+    <Build Include="Utenti\Tables\Usa.sql" />
+    <Build Include="Utenti\Tables\Profilo.sql" />
+    <Build Include="Utenti\Tables\CampoDati.sql" />
+    <Build Include="Utenti\Tables\AutorizzazioneCampi.sql" />
+    <Build Include="Dealer\Tables\TipoDealer.sql" />
+    <Build Include="Dealer\Tables\Stato.sql" />
+    <Build Include="Dealer\Tables\Dealer.sql" />
+    <Build Include="Dealer\Tables\CondizioniPagamento.sql" />
+    <Build Include="Dealer\Tables\CanaliDealer.sql" />
+    <Build Include="Dealer\Tables\Canale.sql" />
+    <Build Include="Area\Tables\Tipologia.sql" />
+    <Build Include="Area\Tables\Operativita.sql" />
+    <Build Include="Area\Tables\AreaSubAgenti.sql" />
+    <Build Include="Area\Tables\AreaPosPod.sql" />
+    <Build Include="Area\Tables\AreaPoint.sql" />
+    <Build Include="Area\Tables\AreaDiCompetenza.sql" />
+    <Build Include="Area\Tables\AreaCommittenti.sql" />
+    <Build Include="Area\Tables\AreaAgentiCommittenti.sql" />
+    <Build Include="Area\Tables\Area.sql" />
+    <Build Include="Catene\Tables\TipoRemunerazione.sql" />
+    <Build Include="Catene\Tables\CatenePosPod.sql" />
+    <Build Include="Catene\Tables\Catene.sql" />
+    <Build Include="DettaglioAgenti\Tables\Dimensionamento.sql" />
+    <Build Include="DettaglioAgenti\Tables\DettaglioSubAgenti.sql" />
+    <Build Include="DettaglioAgenti\Tables\DettaglioAgenti.sql" />
+    <Build Include="Disdetta\Tables\Disdetta.sql" />
+    <Build Include="Disdetta\Tables\DettaglioDisdetta.sql" />
+    <Build Include="InfoGenerali\Tables\InfoSubAgenti.sql" />
+    <Build Include="InfoGenerali\Tables\InfoPosEPod.sql" />
+    <Build Include="InfoGenerali\Tables\InfoPoint.sql" />
+    <Build Include="InfoGenerali\Tables\InfoGenerali.sql" />
+    <Build Include="InfoGenerali\Tables\InfoCommittenti.sql" />
+    <Build Include="InfoGenerali\Tables\InfoAgentiCommittenti.sql" />
+    <Build Include="Negozio\Tables\TipologiaArredo.sql" />
+    <Build Include="Negozio\Tables\OrarioDiApertura.sql" />
+    <Build Include="Negozio\Tables\NegozioPosPod.sql" />
+    <Build Include="Negozio\Tables\NegozioPoint.sql" />
+    <Build Include="Negozio\Tables\NegozioCommittenti.sql" />
+    <Build Include="Negozio\Tables\NegozioAgenti.sql" />
+    <Build Include="Negozio\Tables\Negozio.sql" />
+    <Build Include="Negozio\Tables\ModelloVendita.sql" />
+    <Build Include="Negozio\Tables\DimensioneAreaVendita.sql" />
+    <Build Include="Negozio\Tables\Cluster.sql" />
+    <Build Include="Negozio\Tables\Apre.sql" />
+    <Build Include="Vendite\Tables\VenditePoint.sql" />
+    <Build Include="Vendite\Tables\VenditeCanali.sql" />
+    <Build Include="Vendite\Tables\Vendite.sql" />
+    <Build Include="Storico\Tables\StoricoIndirizzo.sql" />
+    <Build Include="Storico\Tables\StoricoCodice.sql" />
+    <Build Include="Storico\Tables\StoricoCanale.sql" />
+    <Build Include="Import\Tables\Point.sql" />
+    <Build Include="Utility\Tables\Zona.sql" />
+    <Build Include="Utility\Tables\Regione.sql" />
+    <Build Include="Utility\Tables\Provincia.sql" />
+    <Build Include="Utility\Tables\Comune.sql" />
+    <None Include="Scripts\LoadData\Utility_Comune.sql" />
+    <None Include="Scripts\LoadData\Utility_Provincia.sql" />
+    <None Include="Scripts\LoadData\Utility_Regione.sql" />
+    <None Include="Scripts\LoadData\Utility_Zona.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Profilo_GetAll.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Profilo_Update.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Profilo_Insert.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Profilo_Get.sql" />
+    <Build Include="Utenti\Tables\Funzionario.sql" />
+    <Build Include="Utenti\Tables\AreaManager.sql" />
+    <Build Include="Import\Tables\SubAgente.sql" />
+    <Build Include="Import\Tables\Committente.sql" />
+    <Build Include="Import\Tables\AgenteCommittente.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Utenti_Update.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Utenti_Insert.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Utenti_GetAll.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Utenti_Get.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Utenti_Exists.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Utenti_ADData_Get.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_TipoDealer_GetAll.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Utenti_Delete.sql" />
+    <Build Include="dbo\Views\View_ProfiloAutorizzazioniCampi.sql" />
+    <Build Include="Security\Area.sql" />
+    <Build Include="Security\Catene.sql" />
+    <Build Include="Security\Dealer.sql" />
+    <Build Include="Security\DettaglioAgenti.sql" />
+    <Build Include="Security\Disdetta.sql" />
+    <Build Include="Security\Import.sql" />
+    <Build Include="Security\InfoGenerali.sql" />
+    <Build Include="Security\Negozio.sql" />
+    <Build Include="Security\Storico.sql" />
+    <Build Include="Security\Utenti.sql" />
+    <Build Include="Security\Utility.sql" />
+    <Build Include="Security\Vendite.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_Profilo_Delete.sql" />
+    <Build Include="Import\Tables\PosPod.sql" />
+    <Build Include="Import\Tables\EccezioniImport.sql" />
+    <Build Include="Import\Tables\AreaManagerToHide.sql" />
+    <Build Include="Import\Tables\AreaManager.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_Dealer_GetAll.sql" />
+    <Build Include="Import\Tables\FunzionarioToHide.sql" />
+    <Build Include="Import\Tables\Funzionario.sql" />
+    <Build Include="Import\Stored Procedures\SP_EccezioniImport_Insert.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_DealerImport_GetAll.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_DealerImport_Delete.sql" />
+    <Build Include="dbo\Views\View_AutorizzazioneCampi_Test.sql" />
+    <Build Include="Import\Tables\SubAgenteToHide.sql" />
+    <Build Include="Import\Tables\PosPodToHide.sql" />
+    <Build Include="Import\Tables\PointToHide.sql" />
+    <Build Include="Import\Tables\CommittenteToHide.sql" />
+    <Build Include="Import\Tables\AgentiCommittentiToHide.sql" />
+    <Build Include="Dealer\Tables\RelazioneConsumer.sql" />
+    <Build Include="Dealer\Tables\RelazioneBusiness.sql" />
+    <Build Include="Dealer\Tables\DealerBusiness.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RelazioniDealer_Search.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RelazioniDealer_Get.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RelazioniDealer_Delete.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_DealerBusiness_Insert.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_DealerBusiness_GetAll.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_DealerBusiness_Exists.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_DealerBusiness_Delete.sql" />
+    <Build Include="Dealer\Tables\Usa.sql" />
+    <Build Include="dbo\Views\View_DealerUsaCampi_Test.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_DealerBusiness_Update.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_DealerBusiness_Get.sql" />
+    <Build Include="Dealer\Views\View_Committenti.sql" />
+    <Build Include="Dealer\Views\View_DealerUsaCampi_Test.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_Dealer_Update.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_Dealer_Get.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RelazioniDealer_Insert.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RelazioniDealer_GetDealer.sql" />
+    <Build Include="Dealer\Views\View_Point.sql" />
+    <Build Include="Dealer\Views\View_AgentiCommittenti.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_AutorizzazioneCampi_Get.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_AbilitazioniTipoDealer_Get.sql" />
+    <Build Include="Export\Tables\ExportLogDetails.sql" />
+    <Build Include="Export\Stored Procedures\ExportAnagrafica_SubAgenti.sql" />
+    <Build Include="Export\Stored Procedures\ExportAnagrafica_PosPod.sql" />
+    <Build Include="Export\Stored Procedures\ExportAnagrafica_Point.sql" />
+    <Build Include="Export\Stored Procedures\ExportAnagrafica_AgentiCommittenti.sql" />
+    <Build Include="Export\Stored Procedures\ExportAnagrafica_Committenti.sql" />
+    <Build Include="Security\Export.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_CaricaValoriMultipli.sql" />
+    <Build Include="Export\Stored Procedures\ExportScarti.sql" />
+    <Build Include="Import\Tables\Scarti.sql" />
+    <Build Include="Import\Tables\Importazioni.sql" />
+    <Build Include="Import\Tables\Anomalie.sql" />
+    <Build Include="Export\Stored Procedures\ExportLogDetails_Insert.sql" />
+    <Build Include="Export\Stored Procedures\ExportAnomalie_1.sql" />
+    <Build Include="Import\Tables\AnomalieTipo.sql" />
+    <Build Include="Import\Tables\AnomalieMotivazione.sql" />
+    <Build Include="Disdetta\Tables\Richiedente.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_CaricaValoriMultipliSelected.sql" />
+    <Build Include="Dealer\Views\View_PosPod.sql" />
+    <Build Include="Export\Tables\ExportedFiles.sql" />
+    <Build Include="Export\Stored Procedures\ExportedFiles_Insert.sql" />
+    <Build Include="Export\Stored Procedures\ExportedFiles_Get.sql" />
+    <Build Include="Export\Stored Procedures\Export_IDImportazioni_Get.sql" />
+    <Build Include="Negozio\Tables\UsaModelloVendita.sql" />
+    <Build Include="Negozio\Tables\UsaGestoreCondiviso.sql" />
+    <Build Include="Negozio\Tables\GestoreCondiviso.sql" />
+    <Build Include="DettaglioAgenti\Tables\MaterialeEspositivo.sql" />
+    <Build Include="Area\Tables\SegmentazioneCanale.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_OrarioApertura_Get.sql" />
+    <Build Include="Utility\Tables\ExportLista.sql" />
+    <Build Include="Utility\Functions\Split.sql" />
+    <Build Include="Utility\Stored Procedures\SP_Zone_GetAll.sql" />
+    <Build Include="Utility\Stored Procedures\SP_Regioni_Get.sql" />
+    <Build Include="Utility\Stored Procedures\SP_Province_Get.sql" />
+    <Build Include="Utility\Stored Procedures\SP_Comuni_Get.sql" />
+    <Build Include="Utility\Stored Procedures\SP_AreaManager_GetAll.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_StatoDealer_GetAll.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_Canali_GetAll.sql" />
+    <Build Include="Area\Stored Procedures\SP_Operativita_GetAll.sql" />
+    <Build Include="Import\Stored Procedures\SP_Funzionario_GetAll.sql" />
+    <None Include="Scripts\LoadTestData\Area_Area.sql" />
+    <None Include="Scripts\LoadTestData\Area_AreaAgentiCommittenti.sql" />
+    <None Include="Scripts\LoadTestData\Area_AreaCommittenti.sql" />
+    <None Include="Scripts\LoadTestData\Vendite_VenditeCanali.sql" />
+    <None Include="Scripts\LoadTestData\Vendite_Vendite.sql" />
+    <None Include="Scripts\LoadTestData\Utenti_Utente.sql" />
+    <None Include="Scripts\LoadTestData\Utenti_Profilo.sql" />
+    <None Include="Scripts\LoadTestData\Utenti_Funzionario.sql" />
+    <None Include="Scripts\LoadTestData\Utenti_AreaManager.sql" />
+    <None Include="Scripts\LoadTestData\Utenti_AutorizzazioneCampi.sql" />
+    <None Include="Scripts\LoadTestData\Utenti_Usa.sql" />
+    <None Include="Scripts\LoadTestData\Utenti_Accede.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_UsaGestoreCondiviso.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_UsaModelloVendita.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_OrarioDiApertura.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_NegozioPosPod.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_NegozioPoint.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_NegozioCommittenti.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_NegozioAgenti.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_Negozio.sql" />
+    <None Include="Scripts\LoadTestData\Negozio_Apre.sql" />
+    <None Include="Scripts\LoadTestData\InfoGenerali_InfoAgentiCommittenti.sql" />
+    <None Include="Scripts\LoadTestData\InfoGenerali_InfoCommittenti.sql" />
+    <None Include="Scripts\LoadTestData\InfoGenerali_InfoGenerali.sql" />
+    <None Include="Scripts\LoadTestData\InfoGenerali_InfoPoint.sql" />
+    <None Include="Scripts\LoadTestData\InfoGenerali_InfoPosPod.sql" />
+    <None Include="Scripts\LoadTestData\InfoGenerali_InfoSubAgenti.sql" />
+    <None Include="Scripts\LoadTestData\Disdetta_Disdetta.sql" />
+    <None Include="Scripts\LoadTestData\DettaglioAgenti_DettaglioAgenti.sql" />
+    <None Include="Scripts\LoadTestData\Dealer_Dealer.sql" />
+    <None Include="Scripts\LoadTestData\Dealer_CanaliDealer.sql" />
+    <None Include="Scripts\LoadTestData\Catene_Catene.sql" />
+    <None Include="Scripts\LoadTestData\Catene_CatenePosPod.sql" />
+    <None Include="Scripts\LoadTestData\Area_AreaPoint.sql" />
+    <None Include="Scripts\LoadTestData\Area_AreaPosPod.sql" />
+    <None Include="Scripts\LoadTestData\Disdetta_DettaglioDisdetta.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RicercaDealerCode_Get.sql" />
+    <Build Include="Utility\Tables\ArchivioRicerca.sql" />
+    <Build Include="Utility\Stored Procedures\SP_RicercaDealer_Get.sql" />
+    <Build Include="Utility\Stored Procedures\SP_ArchivioRicerca_Get.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RicercaRagioneSociale_Get.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RicercaPartitaIva_Get.sql" />
+    <Build Include="Utility\Stored Procedures\SP_ArchivioRicerca_Insert.sql" />
+    <Build Include="Import\Stored Procedures\SP_EccezioniImport_Exists_OLD.sql" />
+    <Build Include="Utenti\Stored Procedures\SP_UtentiFromUsername_Get.sql" />
+    <Build Include="Dealer\Views\View_OrarioApertura.sql" />
+    <Build Include="Utility\Functions\SplitForUpdate.sql" />
+    <Build Include="Utility\Tables\TokenPermission.sql" />
+    <Build Include="Utility\Stored Procedures\SP_ExportDealer_Get.sql" />
+    <Build Include="Import\Tables\TmpScarti.sql" />
+    <Build Include="Import\Tables\PEC.sql" />
+    <Build Include="Import\Tables\CentroAssistenza.sql" />
+    <Build Include="Import\Stored Procedures\SP_UpdateCondizioniDiPagamento.sql" />
+    <Build Include="Import\Stored Procedures\SP_UpdateCanale.sql" />
+    <Build Include="Import\Stored Procedures\SP_InitializeImport.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportFunzionari.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportCommittenti.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportAreaManager.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportAgenti.sql" />
+    <Build Include="Import\Stored Procedures\SP_CreateScartiTable.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportSubAgenti.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportPosPod.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportPoint.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportDealerData.sql" />
+    <Build Include="Import\Stored Procedures\SP_DeleteEntities.sql" />
+    <Build Include="Negozio\Stored Procedures\SP_ModelloVendita_GetAll.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_Storico_Get.sql" />
+    <Build Include="Utility\Stored Procedures\SP_SegmentazioneCanale_GetAll.sql" />
+    <Build Include="Negozio\Stored Procedures\SP_Cluster_GetAll.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RicercaLocalita_Get.sql" />
+    <Build Include="Area\Stored Procedures\SP_AreaCompetenza_GetAll.sql" />
+    <Build Include="Dealer\Stored Procedures\SP_RicercaMasterDealerCode_Get.sql" />
+    <Build Include="Utility\Tables\ChangeLog.sql" />
+    <Build Include="Import\Stored Procedures\SP_GenerateAnomalie.sql" />
+    <None Include="Scripts\LoadTestData\Dealer_Canale.sql" />
+    <Build Include="Dealer\Views\View_SubAgenti.sql" />
+    <Build Include="Utility\Functions\FN_GetWebUsername.sql" />
+    <Build Include="Dealer\Tables\CanaliTipoDealer.sql" />
+    <Build Include="Import\Stored Procedures\SP_UpdateArea.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportPEC.sql" />
+    <None Include="Scripts\LoadDataPre\_LoadDataPre.sql" />
+    <None Include="Scripts\LoadDataPre\Utenti_CampoDati.sql" />
+    <None Include="Scripts\LoadDataPre\Dealer_Usa.sql" />
+    <None Include="Scripts\LoadDataPre\Utenti_AutorizzazioneCampi.sql" />
+    <None Include="Scripts\LoadDataPre\Utenti_Usa.sql" />
+    <None Include="Scripts\LoadDataPre\Utenti_Accede.sql" />
+    <None Include="Scripts\LoadDataPre\Dealer_Canale.sql" />
+    <None Include="Scripts\LoadDataPre\Area_Operativita.sql" />
+    <None Include="Scripts\LoadDataPre\Area_Tipologia.sql" />
+    <None Include="Scripts\LoadDataPre\Catene_TipoRemunerazione.sql" />
+    <None Include="Scripts\LoadDataPre\Negozio_TipologiaArredo.sql" />
+    <None Include="Scripts\LoadDataPre\Negozio_DimensioneAreaVendita.sql" />
+    <None Include="Scripts\LoadDataPre\Negozio_GestoreCondiviso.sql" />
+    <None Include="Scripts\LoadDataPre\Disdetta_Richiedente.sql" />
+    <None Include="Scripts\LoadDataPre\DettaglioAgenti_MaterialeEspositivo.sql" />
+    <None Include="Scripts\LoadDataPre\DettaglioAgenti_Dimensionamento.sql" />
+    <None Include="Scripts\LoadDataPre\Area_AreaDiCompetenza.sql" />
+    <None Include="Scripts\LoadDataPre\Negozio_Cluster.sql" />
+    <None Include="Scripts\LoadDataPre\Area_SegmentazioneCanale.sql" />
+    <None Include="Scripts\LoadDataPre\Negozio_ModelloVendita.sql" />
+    <None Include="Scripts\LoadDataPre\_CleanDataPre.sql" />
+    <None Include="Scripts\LoadDataPre\Dealer_Stato.sql" />
+    <Build Include="Import\Tables\Dipendenti.sql" />
+    <Build Include="Import\Stored Procedures\SP_ImportDipendenti.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AntonelloLocalDbToProject.scmp" />
+    <None Include="LucaLocalDbToProject.scmp" />
+    <None Include="Scripts\LoadData\Dealer_Stato.sql" />
+    <None Include="Scripts\LoadTestData\LoadTestData.sql" />
+    <None Include="Scripts\CleanDB\DeleteTestData.sql" />
+    <None Include="Scripts\LoadData\Dealer_TipoDealer.sql" />
+    <None Include="DiegoLocalDbToProject.scmp" />
+    <None Include="Scripts\LoadData\Dealer_CondizioniPagamento.sql" />
+    <None Include="Scripts\LoadData\Utenti_CampoDati.sql" />
+    <None Include="GabrieleLocalDbToProject.scmp" />
+    <None Include="Scripts\LoadData\Dealer_Usa.sql" />
+    <None Include="Scripts\LoadData\Area_Tipologia.sql" />
+    <None Include="Scripts\LoadData\Area_Operativita.sql" />
+    <None Include="Scripts\LoadData\Area_AreaDiCompetenza.sql" />
+    <None Include="Scripts\LoadData\Negozio_Cluster.sql" />
+    <None Include="Scripts\LoadData\Catene_TipoRemunerazione.sql" />
+    <None Include="Scripts\LoadData\Negozio_TipologiaArredo.sql" />
+    <None Include="Scripts\LoadData\Negozio_DimensioneAreaVendita.sql" />
+    <None Include="Scripts\LoadData\Negozio_ModelloVendita.sql" />
+    <None Include="Scripts\LoadData\Disdetta_Richiedente.sql" />
+    <None Include="Scripts\LoadData\Area_SegmentazioneCanale.sql" />
+    <None Include="Scripts\LoadData\DettaglioAgenti_MaterialeEspositivo.sql" />
+    <None Include="Scripts\LoadData\Negozio_GestoreCondiviso.sql" />
+    <None Include="Scripts\LoadData\DettaglioAgenti_Dimensionamento.sql" />
+    <None Include="Scripts\LoadTestData\Area_AreaSubAgenti.sql" />
+    <None Include="Scripts\LoadTestData\Storico_StoricoCanale.sql" />
+    <None Include="Scripts\LoadTestData\Storico_StoricoIndirizzo.sql" />
+    <None Include="Scripts\LoadTestData\Storico_StoricoCodice.sql" />
+    <None Include="Scripts\LoadData\Import_AnomalieTipo.sql" />
+    <None Include="Scripts\LoadData\Import_AnomalieMotivazione.sql" />
+    <None Include="Scripts\LoadData\LoadDataPre.sql" />
+    <None Include="Scripts\CleanDB\CleanDataPre.sql" />
+    <None Include="Scripts\LoadData\Dealer_Canale.sql" />
+  </ItemGroup>
+</Project>

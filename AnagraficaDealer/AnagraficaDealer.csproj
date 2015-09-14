@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB6D9468-1293-43DE-9C98-9814D9B8E870}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spindox.AnagraficaDealer</RootNamespace>
+    <AssemblyName>Spindox.AnagraficaDealer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.1.100, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CRMPerformance\CRMPerformance\bin\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AjaxMin, Version=5.14.5506.26196, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CRMPerformance\CRMPerformance\bin\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>packages\EPPlus\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CRMPerformance\CRMPerformance\bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessoNegato.aspx" />
+    <Content Include="App_Data\PermissionSezioniCampi.xml" />
+    <Content Include="Archivio.aspx" />
+    <Content Include="ArchivioCruscotto.aspx" />
+    <Content Include="ArchivioDatabase.aspx" />
+    <Content Include="CreaRelazioni.aspx" />
+    <Content Include="DealerUpdateXml.xml" />
+    <Content Include="ExportToExcel.aspx" />
+    <Content Include="GestioneProfili.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Importazioni.aspx" />
+    <Content Include="ImportEccezioni.aspx" />
+    <Content Include="DealerBusiness.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DettaglioDealer.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="Profili.aspx" />
+    <Content Include="Resources\Images\Amministrazione\add1_active.png" />
+    <Content Include="Resources\Images\Amministrazione\add1_disabled.png" />
+    <Content Include="Resources\Images\Amministrazione\add1_inactive.png" />
+    <Content Include="Resources\Images\Amministrazione\delete_active.png" />
+    <Content Include="Resources\Images\Amministrazione\delete_disabled.png" />
+    <Content Include="Resources\Images\Amministrazione\delete_inactive.png" />
+    <Content Include="Resources\Images\Bottoni\btn_add_active.png" />
+    <Content Include="Resources\Images\Bottoni\btn_add_disabled.png" />
+    <Content Include="Resources\Images\Bottoni\btn_add_inactive.png" />
+    <Content Include="Resources\Images\Bottoni\btn_search2.png" />
+    <Content Include="Resources\Images\Bottoni\confirm1.png" />
+    <Content Include="Resources\Images\Bottoni\confirm2.png" />
+    <Content Include="Resources\Images\Bottoni\confirm3.png" />
+    <Content Include="Resources\Images\Bottoni\salva_active.png" />
+    <Content Include="Resources\Images\Bottoni\salva_disabled.png" />
+    <Content Include="Resources\Images\Bottoni\salva_inactive.png" />
+    <Content Include="Resources\Images\Dettaglio\download_attach_active.png" />
+    <Content Include="Resources\Images\Dettaglio\upload_active.png" />
+    <Content Include="Resources\Images\Dettaglio\upload_inactive.png" />
+    <Content Include="Resources\Images\Master\Logo_AD.png" />
+    <Content Include="Resources\Images\Ricerca\caricaricerca.png" />
+    <Content Include="Resources\Images\Ricerca\cerca.png" />
+    <Content Include="Resources\Images\Ricerca\cerca3.png" />
+    <Content Include="Resources\Images\Ricerca\download_attach_active.png" />
+    <Content Include="Resources\Images\Ricerca\Esporta.png" />
+    <Content Include="Resources\Images\Ricerca\export_excel.png" />
+    <Content Include="Resources\Images\Ricerca\loading.gif" />
+    <Content Include="Resources\Images\Ricerca\page-loader.gif" />
+    <Content Include="Resources\Images\Ricerca\raffinaricerca.png" />
+    <Content Include="Resources\Images\Ricerca\salvaricerca.png" />
+    <Content Include="Resources\Images\Ricerca\scarica.png" />
+    <Content Include="Resources\Images\Ricerca\search_red.png" />
+    <Content Include="Resources\Images\Ricerca\upload_active.png" />
+    <Content Include="Resources\Scripts\AD-Scripts.js" />
+    <Content Include="Resources\Scripts\jquery-1.11.2.min.js" />
+    <Content Include="Resources\Scripts\jquery-ui-1.11.2.custom.min.js" />
+    <Content Include="Resources\Scripts\jquery-ui.1.9.1.min.js" />
+    <Content Include="Resources\Scripts\jquery-ui_1.10.3.js" />
+    <Content Include="Resources\Scripts\jquery.1.8.2.min.js" />
+    <Content Include="Resources\Scripts\jquery.ui.datepicker-it.js" />
+    <Content Include="Resources\Scripts\Ricerca.js" />
+    <Content Include="Resources\Scripts\RicercaLoad.js" />
+    <Content Include="Resources\Scripts\ui.dropdownchecklist.js" />
+    <Content Include="Resources\Stylesheets\AD-MasterPage.css" />
+    <Content Include="Resources\Stylesheets\AD-Popup.css" />
+    <Content Include="Resources\Stylesheets\AD-Stylesheet-ie8.css" />
+    <Content Include="Resources\Stylesheets\AD-Stylesheet.css" />
+    <Content Include="Resources\Stylesheets\DettaglioDealer.css" />
+    <Content Include="Resources\Stylesheets\GridviewScroll.css" />
+    <Content Include="GestioneUtenti.aspx" />
+    <Content Include="Resources\Stylesheets\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Resources\Stylesheets\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Resources\Stylesheets\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Resources\Stylesheets\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Resources\Stylesheets\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Resources\Stylesheets\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Resources\Stylesheets\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Resources\Stylesheets\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Resources\Stylesheets\images\ui-icons_222222_256x240.png" />
+    <Content Include="Resources\Stylesheets\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Resources\Stylesheets\images\ui-icons_454545_256x240.png" />
+    <Content Include="Resources\Stylesheets\images\ui-icons_888888_256x240.png" />
+    <Content Include="Resources\Stylesheets\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Resources\Stylesheets\jquery-ui-1.11.2.custom.css" />
+    <Content Include="Resources\Stylesheets\jquery-ui.css" />
+    <Content Include="Resources\Stylesheets\Ricerca.css" />
+    <Content Include="Resources\Stylesheets\ui.dropdownchecklist.themeroller.css" />
+    <Content Include="Ricerca.aspx" />
+    <Content Include="RicercaRelazioni.aspx" />
+    <Content Include="Resources\Images\Amministrazione\add_active.png" />
+    <Content Include="Resources\Images\Amministrazione\add_cdc_active.png" />
+    <Content Include="Resources\Images\Amministrazione\add_cdc_disabled.png" />
+    <Content Include="Resources\Images\Amministrazione\add_disabled.png" />
+    <Content Include="Resources\Images\Amministrazione\add_inactive.png" />
+    <Content Include="Resources\Images\Amministrazione\disable_active.png" />
+    <Content Include="Resources\Images\Amministrazione\disable_disabled.png" />
+    <Content Include="Resources\Images\Amministrazione\disable_inactive.png" />
+    <Content Include="Resources\Images\Amministrazione\edit_active.png" />
+    <Content Include="Resources\Images\Amministrazione\edit_disabled.png" />
+    <Content Include="Resources\Images\Amministrazione\edit_history_active.png" />
+    <Content Include="Resources\Images\Amministrazione\edit_history_disabled.png" />
+    <Content Include="Resources\Images\Amministrazione\edit_inactive.png" />
+    <Content Include="Resources\Images\Amministrazione\enable_active.png" />
+    <Content Include="Resources\Images\arrowhl.png" />
+    <Content Include="Resources\Images\arrowhr.png" />
+    <Content Include="Resources\Images\arrowvb.png" />
+    <Content Include="Resources\Images\arrowvt.png" />
+    <Content Include="Resources\Images\Bottoni\btn_annulla_popup.png" />
+    <Content Include="Resources\Images\Bottoni\btn_chiudi_popup.png" />
+    <Content Include="Resources\Images\Bottoni\btn_confirm.png" />
+    <Content Include="Resources\Images\Bottoni\btn_confirm_popup.png" />
+    <Content Include="Resources\Images\Bottoni\btn_confirm_popup_disabled.png" />
+    <Content Include="Resources\Images\Bottoni\btn_reset_red.png" />
+    <Content Include="Resources\Images\Bottoni\btn_rinvia.png" />
+    <Content Include="Resources\Images\Bottoni\btn_search.png" />
+    <Content Include="Resources\Images\Dettaglio\delete_active.png" />
+    <Content Include="Resources\Images\Dettaglio\delete_disabled.png" />
+    <Content Include="Resources\Images\Dettaglio\delete_inactive.png" />
+    <Content Include="Resources\Images\Dettaglio\resend_active.png" />
+    <Content Include="Resources\Images\Master\attesa.gif" />
+    <Content Include="Resources\Images\Master\calendar.png" />
+    <Content Include="Resources\Images\Master\calendar_Al.png" />
+    <Content Include="Resources\Images\Master\calendar_Dal.png" />
+    <Content Include="Resources\Images\Master\Reset-icon-old.png" />
+    <Content Include="Resources\Images\Master\Reset-icon.png" />
+    <Content Include="Resources\Images\Master\ResetDate-icon.png" />
+    <Content Include="Resources\Images\Master\ResetDate-icon_tmp.png" />
+    <Content Include="Resources\Images\Master\Search-icon.png" />
+    <Content Include="Resources\Images\Master\user_disabled.png" />
+    <Content Include="Resources\Images\Master\user_enabled.png" />
+    <Content Include="Resources\Images\Menu\Massive_Import.png" />
+    <Content Include="Resources\Images\Menu\Massive_Import3.png" />
+    <Content Include="Resources\Images\Menu\new_sim.png" />
+    <Content Include="Resources\Images\Menu\new_sim3.png" />
+    <Content Include="Resources\Images\Menu\reporting.png" />
+    <Content Include="Resources\Images\Menu\reporting3.png" />
+    <Content Include="Resources\Images\Menu\search_manage.png" />
+    <Content Include="Resources\Images\Menu\search_manage3.png" />
+    <Content Include="Resources\Images\Menu\supplier.png" />
+    <Content Include="Resources\Images\Menu\supplier3.png" />
+    <Content Include="Resources\Images\Menu\supplier4.png" />
+    <Content Include="Resources\Images\Sezioni\activation_red.png" />
+    <Content Include="Resources\Images\Sezioni\change_attribute_red.png" />
+    <Content Include="Resources\Images\Sezioni\manage-attachment_red.png" />
+    <Content Include="Resources\Images\Sezioni\manage-attachment_red2.png" />
+    <Content Include="Resources\Images\Sezioni\timing_red.png" />
+    <Content Include="Resources\Images\Sezioni\variation_red.png" />
+    <Content Include="Resources\Scripts\gridviewScroll.js" />
+    <Content Include="UserControl\DettaglioDealer\DettaglioStorico.ascx" />
+    <Content Include="UserControl\Menu\GestioneDealerBusinessSubMenuControl.ascx" />
+    <Content Include="UserControl\Menu\RelazioniSubMenuControl.ascx" />
+    <Content Include="UserControl\Menu\AmministrazioneSubMenuControl.ascx" />
+    <Content Include="UserControl\Menu\GestioneProfiliSubMenuControl.ascx" />
+    <Content Include="UserControl\Menu\GestioneImportEccezioniSubMenuControl.ascx" />
+    <Content Include="UserControl\Menu\RicercaSubMenuControl.ascx" />
+    <Content Include="UserControl\Menu\GestioneUtentiSubMenuControl.ascx" />
+    <Content Include="UserControl\Menu\ArchivioSubMenuControl.ascx" />
+    <Content Include="UserControl\RagioniSocialiCorrelate\PopupAggiungiRelazioneDealer.ascx" />
+    <Content Include="UserControl\RagioniSocialiCorrelate\PopupAggiungiDealerBusiness.ascx" />
+    <Content Include="UserControl\Popup\PopupAggiungiEccezione.ascx" />
+    <Content Include="UserControl\Popup\PopupAggiungiTipoDealer.ascx" />
+    <Content Include="UserControl\Popup\PopupElimina.ascx" />
+    <Content Include="UserControl\RagioniSocialiCorrelate\DettaglioRelazioni.ascx" />
+    <Content Include="UserControl\Popup\PopupMessaggio.ascx" />
+    <Content Include="UserControl\RagioniSocialiCorrelate\PopupModificheDealerBusiness.ascx" />
+    <Content Include="Utenti.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessoNegato.aspx.cs">
+      <DependentUpon>AccessoNegato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessoNegato.aspx.designer.cs">
+      <DependentUpon>AccessoNegato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivio.aspx.cs">
+      <DependentUpon>Archivio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivio.aspx.designer.cs">
+      <DependentUpon>Archivio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArchivioCruscotto.aspx.cs">
+      <DependentUpon>ArchivioCruscotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArchivioCruscotto.aspx.designer.cs">
+      <DependentUpon>ArchivioCruscotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArchivioDatabase.aspx.cs">
+      <DependentUpon>ArchivioDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArchivioDatabase.aspx.designer.cs">
+      <DependentUpon>ArchivioDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreaRelazioni.aspx.cs">
+      <DependentUpon>CreaRelazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreaRelazioni.aspx.designer.cs">
+      <DependentUpon>CreaRelazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportToExcel.aspx.cs">
+      <DependentUpon>ExportToExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportToExcel.aspx.designer.cs">
+      <DependentUpon>ExportToExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestioneProfili.aspx.cs">
+      <DependentUpon>GestioneProfili.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestioneProfili.aspx.designer.cs">
+      <DependentUpon>GestioneProfili.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Importazioni.aspx.cs">
+      <DependentUpon>Importazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Importazioni.aspx.designer.cs">
+      <DependentUpon>Importazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportEccezioni.aspx.cs">
+      <DependentUpon>ImportEccezioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportEccezioni.aspx.designer.cs">
+      <DependentUpon>ImportEccezioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DealerBusiness.aspx.cs">
+      <DependentUpon>DealerBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DealerBusiness.aspx.designer.cs">
+      <DependentUpon>DealerBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DettaglioDealer.aspx.cs">
+      <DependentUpon>DettaglioDealer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DettaglioDealer.aspx.designer.cs">
+      <DependentUpon>DettaglioDealer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profili.aspx.cs">
+      <DependentUpon>Profili.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profili.aspx.designer.cs">
+      <DependentUpon>Profili.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestioneUtenti.aspx.cs">
+      <DependentUpon>GestioneUtenti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestioneUtenti.aspx.designer.cs">
+      <DependentUpon>GestioneUtenti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Ricerca.aspx.cs">
+      <DependentUpon>Ricerca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ricerca.aspx.designer.cs">
+      <DependentUpon>Ricerca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RicercaRelazioni.aspx.cs">
+      <DependentUpon>RicercaRelazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RicercaRelazioni.aspx.designer.cs">
+      <DependentUpon>RicercaRelazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\DettaglioDealer\DettaglioStorico.ascx.cs">
+      <DependentUpon>DettaglioStorico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\DettaglioDealer\DettaglioStorico.ascx.designer.cs">
+      <DependentUpon>DettaglioStorico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Menu\GestioneDealerBusinessSubMenuControl.ascx.cs">
+      <DependentUpon>GestioneDealerBusinessSubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Menu\GestioneDealerBusinessSubMenuControl.ascx.designer.cs">
+      <DependentUpon>GestioneDealerBusinessSubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Menu\RelazioniSubMenuControl.ascx.cs">
+      <DependentUpon>RelazioniSubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Menu\RelazioniSubMenuControl.ascx.designer.cs">
+      <DependentUpon>RelazioniSubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Menu\AmministrazioneSubMenuControl.ascx.cs">
+      <DependentUpon>AmministrazioneSubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Menu\AmministrazioneSubMenuControl.ascx.designer.cs">
+      <DependentUpon>AmministrazioneSubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Menu\GestioneProfiliSubMenuControl.ascx.cs">
+      <DependentUpon>GestioneProfiliSubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Menu\GestioneProfiliSubMenuControl.ascx.designer.cs">
+      <DependentUpon>GestioneProfiliSubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Menu\GestioneImportEccezioniSubMenuControl.ascx.cs">
+      <DependentUpon>GestioneImportEccezioniSubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Menu\GestioneImportEccezioniSubMenuControl.ascx.designer.cs">
+      <DependentUpon>GestioneImportEccezioniSubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Menu\RicercaSubMenuControl.ascx.cs">
+      <DependentUpon>RicercaSubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Menu\RicercaSubMenuControl.ascx.designer.cs">
+      <DependentUpon>RicercaSubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Menu\GestioneUtentiSubMenuControl.ascx.cs">
+      <DependentUpon>GestioneUtentiSubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Menu\GestioneUtentiSubMenuControl.ascx.designer.cs">
+      <DependentUpon>GestioneUtentiSubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Menu\ArchivioSubMenuControl.ascx.cs">
+      <DependentUpon>ArchivioSubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Menu\ArchivioSubMenuControl.ascx.designer.cs">
+      <DependentUpon>ArchivioSubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RagioniSocialiCorrelate\PopupAggiungiRelazioneDealer.ascx.cs">
+      <DependentUpon>PopupAggiungiRelazioneDealer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RagioniSocialiCorrelate\PopupAggiungiRelazioneDealer.ascx.designer.cs">
+      <DependentUpon>PopupAggiungiRelazioneDealer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RagioniSocialiCorrelate\PopupAggiungiDealerBusiness.ascx.cs">
+      <DependentUpon>PopupAggiungiDealerBusiness.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RagioniSocialiCorrelate\PopupAggiungiDealerBusiness.ascx.designer.cs">
+      <DependentUpon>PopupAggiungiDealerBusiness.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Popup\PopupAggiungiEccezione.ascx.cs">
+      <DependentUpon>PopupAggiungiEccezione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Popup\PopupAggiungiEccezione.ascx.designer.cs">
+      <DependentUpon>PopupAggiungiEccezione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Popup\PopupAggiungiTipoDealer.ascx.cs">
+      <DependentUpon>PopupAggiungiTipoDealer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Popup\PopupAggiungiTipoDealer.ascx.designer.cs">
+      <DependentUpon>PopupAggiungiTipoDealer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Popup\PopupElimina.ascx.cs">
+      <DependentUpon>PopupElimina.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Popup\PopupElimina.ascx.designer.cs">
+      <DependentUpon>PopupElimina.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RagioniSocialiCorrelate\DettaglioRelazioni.ascx.cs">
+      <DependentUpon>DettaglioRelazioni.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\RagioniSocialiCorrelate\DettaglioRelazioni.ascx.designer.cs">
+      <DependentUpon>DettaglioRelazioni.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Popup\PopupMessaggio.ascx.cs">
+      <DependentUpon>PopupMessaggio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Popup\PopupMessaggio.ascx.designer.cs">
+      <DependentUpon>PopupMessaggio.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RagioniSocialiCorrelate\PopupModificheDealerBusiness.ascx.cs">
+      <DependentUpon>PopupModificheDealerBusiness.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RagioniSocialiCorrelate\PopupModificheDealerBusiness.ascx.designer.cs">
+      <DependentUpon>PopupModificheDealerBusiness.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti.aspx.cs">
+      <DependentUpon>Utenti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utenti.aspx.designer.cs">
+      <DependentUpon>Utenti.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage.Master" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Dati\Anomalie\test.xlsx" />
+    <None Include="Properties\PublishProfiles\AnagraficaDealerPre.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnagraficaDealerClassLib\AnagraficaDealerClassLib.csproj">
+      <Project>{032eee3c-c4f8-4664-afc2-870d2b10e8a6}</Project>
+      <Name>AnagraficaDealerClassLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dati\Scarti\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14261</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14262/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

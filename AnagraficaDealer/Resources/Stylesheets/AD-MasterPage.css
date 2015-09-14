@@ -1,0 +1,233 @@
+﻿input:focus {
+    outline: 0px;
+}
+
+
+body {
+    font-family: Arial;
+}
+
+/*HEADER*/
+.divHeaderTable {
+    width: 100%;
+    min-width: 1000px; /* min width from IE8 */
+    padding-bottom: 5px;
+    display: block;
+}
+
+.divRow {
+    width: 100%; /* add extra that you want to for header column */
+    height: 50px;
+}
+
+.divGridView {
+    height: 450px;
+}
+
+
+.labelMenu {
+    font-weight: bolder;
+    display: block;
+    text-align: center;
+    font-size: x-small;
+}
+
+
+.divHeaderMenuColumn {
+    float: left;
+    width:600px;
+    margin-left:10px;
+    text-align: center;
+}
+
+.divMenuTab {
+    float: left;
+    width: 165px;
+    height: 50px;
+    margin-right: 1px;
+    margin-left: 1px;
+    background-color: #555555;
+    color: white;
+    cursor: pointer;
+}
+
+.divMenuSelectedTab {
+    float: left;
+    width: 165px;
+    height: 50px;
+    margin-right: 1px;
+    margin-left: 1px;
+    background-color: #E60001;
+    color: white;
+    cursor: pointer;
+}
+
+
+.divMenuTab img {
+    height: 25px;
+    padding-top: 5px;
+}
+
+.divMenuSelectedTab img {
+    height: 25px;
+    padding-top: 5px;
+}
+
+.divMenuTab:hover {
+    background-color: #CCCCCC;
+    cursor: pointer;
+}
+
+.divHeaderLogoColumn {
+    float: left;
+    /*width: 200px;*/
+}
+
+.divHeaderFunctionColumn {
+    float: right;
+    text-align: center;
+    font-size: x-small;
+    margin-top: 8px;
+}
+
+table.tableRicerca {
+    float: right;
+    border-right: 1px solid #E6E7E8;
+    border-left: 1px solid #E6E7E8;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+table.tableUtente {
+    float: right;
+    padding-left: 5px;
+    /*padding-top: 7px;*/
+}
+
+td.tdImg {
+    padding-right: 5px;
+}
+
+td.tdLogout {
+    text-align: right;
+    border-left: 1px solid #E6E7E8;
+}
+
+
+#imgUtente {
+    width: 25px;
+    height: 25px;
+}
+
+#imgRicerca {
+    width: 25px;
+}
+
+#imgRicercaDown {
+    width: 15px;
+}
+
+#imgLogo {
+    height: 46px;
+}
+
+
+.divContentRow {
+    height: 560px;
+    border: 1px solid #E6E7E8;
+}
+
+.divSubMenuTab {
+    float: left;
+    width: 165px;
+    height: 50px;
+    margin-right: 5px;
+    color: black;
+    display: table;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
+        vertical-align: bottom;
+}
+
+.divSubMenuSelectedTab {
+    float: left;
+    width: 165px;
+    height: 50px;
+    margin-right: 5px;
+    color: #E60001;
+    display: table;
+    border-bottom: 5px solid #E60001;
+    cursor: pointer;
+    background-color: white;
+        vertical-align: bottom;
+}
+
+.divSubMenuTab:hover {
+    color: gray;
+    border-bottom: 5px solid gray;
+    cursor: pointer;
+}
+
+.divRowSubMenu {
+    width: 100%;
+    height: 50px;
+    padding-top: 5px;
+    border-bottom: 1px solid #E6E7E8;
+}
+
+
+.labelSubMenu {
+    vertical-align: bottom;
+    font-weight: bolder;
+    display: block;
+    text-align: center;
+    font-size: x-small;
+    text-decoration: none;
+    color: black;
+    margin-top: 30px;
+}
+
+.labelSubMenuSelected {
+    vertical-align: bottom;
+    font-weight: bolder;
+    display: block;
+    text-align: center;
+    font-size: x-small;
+    text-decoration: none;
+    color: #E60001;
+    margin-top: 30px;
+}
+
+
+.imgSubMenu {
+    width: 25px;
+    margin: 15px;
+}
+
+
+.divContentRowProfili {
+    height: 430px;
+    /* margin-top: 5px; */
+    border-top: 1px solid #E6E7E8;
+    border-right: 1px solid #E6E7E8;
+    border-left: 1px solid #E6E7E8;
+    border-bottom: 1px solid #E6E7E8;
+}
+
+.divGridViewProfili {
+    height: 290px;
+    width: 400px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.divGridViewDealerBus {
+    height: 380px;
+}
+
+
+.divGridViewRelazioni {
+    height: 270px;
+}

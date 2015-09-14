@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AnagraficaDealerDatabase", "AnagraficaDealerDatabase\AnagraficaDealerDatabase.sqlproj", "{24C65453-CE57-4851-B638-A007968D1910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnagraficaDealer", "AnagraficaDealer\AnagraficaDealer.csproj", "{DB6D9468-1293-43DE-9C98-9814D9B8E870}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnagraficaDealerClassLib", "AnagraficaDealerClassLib\AnagraficaDealerClassLib.csproj", "{032EEE3C-C4F8-4664-AFC2-870D2B10E8A6}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "AnagraficaDealerExportIS", "AnagraficaDealerISExport\AnagraficaDealerISExport\AnagraficaDealerExportIS.dtproj", "{4F42D467-3513-4641-A34A-5B1376DB1C64}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "AnagraficaDealerIS", "AnagraficaDealerIS\AnagraficaDealerIS.dtproj", "{62BFBF7E-F615-43AB-91F4-5D3A9DEA41C8}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "AnagraficaDealer2012", "AnagraficaDealer2012\AnagraficaDealer2012\AnagraficaDealer2012.dtproj", "{A2768D22-F80E-4B40-8698-560578FFAB54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UltimoPackageAntonello", "UltimoPackageAntonello", "{C9ACD8AD-0F15-41EB-9714-DE9A36D6FB34}"
+	ProjectSection(SolutionItems) = preProject
+		AnagraficaDealer2012.zip = AnagraficaDealer2012.zip
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24C65453-CE57-4851-B638-A007968D1910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C65453-CE57-4851-B638-A007968D1910}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24C65453-CE57-4851-B638-A007968D1910}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C65453-CE57-4851-B638-A007968D1910}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{24C65453-CE57-4851-B638-A007968D1910}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{24C65453-CE57-4851-B638-A007968D1910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C65453-CE57-4851-B638-A007968D1910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C65453-CE57-4851-B638-A007968D1910}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DB6D9468-1293-43DE-9C98-9814D9B8E870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6D9468-1293-43DE-9C98-9814D9B8E870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6D9468-1293-43DE-9C98-9814D9B8E870}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6D9468-1293-43DE-9C98-9814D9B8E870}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{DB6D9468-1293-43DE-9C98-9814D9B8E870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6D9468-1293-43DE-9C98-9814D9B8E870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{032EEE3C-C4F8-4664-AFC2-870D2B10E8A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032EEE3C-C4F8-4664-AFC2-870D2B10E8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032EEE3C-C4F8-4664-AFC2-870D2B10E8A6}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{032EEE3C-C4F8-4664-AFC2-870D2B10E8A6}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{032EEE3C-C4F8-4664-AFC2-870D2B10E8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032EEE3C-C4F8-4664-AFC2-870D2B10E8A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F42D467-3513-4641-A34A-5B1376DB1C64}.Debug|Any CPU.ActiveCfg = Development
+		{4F42D467-3513-4641-A34A-5B1376DB1C64}.Debug|Any CPU.Build.0 = Development
+		{4F42D467-3513-4641-A34A-5B1376DB1C64}.Development|Any CPU.ActiveCfg = Development
+		{4F42D467-3513-4641-A34A-5B1376DB1C64}.Development|Any CPU.Build.0 = Development
+		{4F42D467-3513-4641-A34A-5B1376DB1C64}.Release|Any CPU.ActiveCfg = Development
+		{4F42D467-3513-4641-A34A-5B1376DB1C64}.Release|Any CPU.Build.0 = Development
+		{62BFBF7E-F615-43AB-91F4-5D3A9DEA41C8}.Debug|Any CPU.ActiveCfg = Development
+		{62BFBF7E-F615-43AB-91F4-5D3A9DEA41C8}.Debug|Any CPU.Build.0 = Development
+		{62BFBF7E-F615-43AB-91F4-5D3A9DEA41C8}.Development|Any CPU.ActiveCfg = Development
+		{62BFBF7E-F615-43AB-91F4-5D3A9DEA41C8}.Development|Any CPU.Build.0 = Development
+		{62BFBF7E-F615-43AB-91F4-5D3A9DEA41C8}.Release|Any CPU.ActiveCfg = Development
+		{62BFBF7E-F615-43AB-91F4-5D3A9DEA41C8}.Release|Any CPU.Build.0 = Development
+		{A2768D22-F80E-4B40-8698-560578FFAB54}.Debug|Any CPU.ActiveCfg = Development
+		{A2768D22-F80E-4B40-8698-560578FFAB54}.Debug|Any CPU.Build.0 = Development
+		{A2768D22-F80E-4B40-8698-560578FFAB54}.Development|Any CPU.ActiveCfg = Development
+		{A2768D22-F80E-4B40-8698-560578FFAB54}.Development|Any CPU.Build.0 = Development
+		{A2768D22-F80E-4B40-8698-560578FFAB54}.Release|Any CPU.ActiveCfg = Development
+		{A2768D22-F80E-4B40-8698-560578FFAB54}.Release|Any CPU.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://nicolavannucci.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AnagraficaDealer\\AnagraficaDealer.csproj
+		SccProjectName1 = AnagraficaDealer
+		SccLocalPath1 = AnagraficaDealer
+		SccProjectUniqueName2 = AnagraficaDealerDatabase\\AnagraficaDealerDatabase.sqlproj
+		SccProjectName2 = AnagraficaDealerDatabase
+		SccLocalPath2 = AnagraficaDealerDatabase
+		SccProjectUniqueName3 = AnagraficaDealerClassLib\\AnagraficaDealerClassLib.csproj
+		SccProjectName3 = AnagraficaDealerClassLib
+		SccLocalPath3 = AnagraficaDealerClassLib
+		SccProjectUniqueName4 = AnagraficaDealerISExport\\AnagraficaDealerISExport\\AnagraficaDealerExportIS.dtproj
+		SccProjectName4 = AnagraficaDealerISExport/AnagraficaDealerISExport
+		SccLocalPath4 = AnagraficaDealerISExport\\AnagraficaDealerISExport
+		SccProjectUniqueName5 = AnagraficaDealerIS\\AnagraficaDealerIS.dtproj
+		SccProjectName5 = AnagraficaDealerIS
+		SccLocalPath5 = AnagraficaDealerIS
+		SccProjectUniqueName6 = AnagraficaDealer2012\\AnagraficaDealer2012\\AnagraficaDealer2012.dtproj
+		SccProjectName6 = AnagraficaDealer2012/AnagraficaDealer2012
+		SccLocalPath6 = AnagraficaDealer2012\\AnagraficaDealer2012
+	EndGlobalSection
+EndGlobal

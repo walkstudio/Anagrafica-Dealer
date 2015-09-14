@@ -1,0 +1,467 @@
+﻿.noCursor {
+    cursor: default;
+}
+
+.pointerCursor {
+    cursor: pointer;
+}
+
+.noDisplay {
+    display: none;
+}
+
+
+.noWrap {
+    white-space: pre-line;
+}
+
+.textWrap {
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+.lblSection {
+font-size: small;
+color: #E60001;
+padding-left: 6px;
+float: left;
+padding-right: 10px;
+padding-top: 22px;
+font-weight: 700;
+font-family:Arial;
+/*font-weight: 800;
+color: #E60000;
+font-size:smaller;
+padding-left: 10px;*/
+}
+
+.lblSectionProfili {
+font-size: small;
+color: #E60001;
+/*padding-left: 6px;*/
+/*float: left;*/
+/*padding-right: 10px;
+padding-top: 22px;*/
+font-weight: 700;
+font-family:Arial;
+}
+
+.lblSectionAmministazione {
+font-family:Arial;
+font-weight: 800;
+color: #E60000;
+font-size:smaller;
+white-space:nowrap;
+/*padding-left: 10px;*/
+}
+
+.lblNormal {
+    font-family: Arial;
+    font-weight: 600;
+    font-size: small;
+    padding: 10px;
+    padding-bottom: 25px;
+}
+
+
+.imgBtn {
+    width: 125px;
+    height: 36px;
+}
+
+.imgCercaUtente {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.imgSection {
+    width: 26px;
+    padding-left: 10px;
+    float: left;
+    padding-right: 10px;
+    padding-top: 15px;
+}
+
+.imgReset{
+    vertical-align:middle;
+    padding-right:10px;
+    padding-left:10px;
+}
+
+/*TEXTBOX*/
+
+.textBox {
+    outline: 1px solid #F2F2F2;
+    margin-top: 4px;
+    height: 18px;
+}
+
+.txtCalendar {
+    width: 70px;
+    height: 18px;
+}
+
+.txtBoxSmall {
+    width: 90px;
+}
+
+.txtBoxMedium {
+    width: 130px;
+}
+
+.txtBoxLarge {
+    width: 160px;
+      margin-left: 6px;
+}
+
+.txtBoxLargeCR {
+    width: 181px;
+      margin-left: 6px;
+}
+
+.txtBoxXLarge {
+    width: 400px;
+}
+
+.txtBoxLLarge{
+    width:180px;
+}
+.txtBoxMulti {
+    resize: none;
+    width: 355px;
+    height: 36px;
+}
+
+/*DROPDOWNLIST*/
+
+
+
+.ddlStyle {
+    outline: 1px solid #F2F2F2;
+    margin-top: 4px;
+    height: 24px;
+}
+
+    .ddlStyle:disabled {
+        background-color: rgb(235, 235, 228);
+        border: 1px solid silver;
+    }
+
+
+.ddlXSmall {
+    width: 75px;
+}
+
+.ddlSmall {
+    width: 135px;
+}
+
+.ddlMedium {
+    width: 165px;
+}
+
+.ddlMediumRicerca {
+    width: 165px;
+    margin-left:6px;
+}
+
+.ddlLarge {
+    width: 200px;
+}
+
+/*WATERMARK*/
+.watermark {
+    color: gray;
+}
+
+
+.calendarWatermarkDal {
+    background-color: white;
+    background: url('/Resources/Images/Master/calendar_Dal.png') no-repeat white;
+    background-position-y:center;
+}
+
+.calendarWatermarkAl {
+    background-color: white;
+    background: url('/Resources/Images/Master/calendar_Al.png') no-repeat white;
+    background-position-y:center;
+}
+
+.calendarWatermark {
+    background-color: white;
+    background: url('/Resources/Images/Master/calendar.png') no-repeat white;
+    background-position-y:center;
+
+}
+
+.txtCalendarWM {
+    width: 70px;
+    height: 20px;
+    border:1px solid grey;
+}
+
+
+.chkBox{
+    font-size:small;
+    font-family:Arial;
+    margin-left:5px;
+}
+
+/* REPORT PANNELLO USER CONTROL*/
+
+.divPannelloRicerca {
+   background-color:#E6E7E8;
+   width:100%;
+   padding-top: 5px;
+   padding-bottom:5px;
+   margin-top:4px;
+
+}
+
+.tablePannelloRicerca{
+    margin-top: 5px;
+    margin-bottom:5px;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableCreaRelazione{
+    margin-top: 5px;
+    margin-bottom:5px;
+    width: 980px;
+
+}
+
+.divMessaggio{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size:small;
+    padding-left: 15px;
+    border-bottom:1px solid #E6E7E8;
+}
+
+.marginRightSmall{
+    margin-right:15px;
+}
+
+.tdDDl{
+    width:210px;
+}
+.tdDDl2{
+    width:120px;
+}
+.tdLbl1{
+    width:100px;
+}
+.tdLbl2{
+    width:80px;
+}
+.tdLbl3{
+    width:120px;
+}
+
+.tdTXT{
+    width:180px;
+}
+
+.tdBTN{
+    width:60px;
+}
+
+/*GESTIONE UTENTI*/
+.tdSpace{
+    height: 30px;
+}
+
+.tdCol1Amministrazione{
+     width: 80px;
+}
+.tdCol2Amministrazione{
+     width: 175px;
+}
+
+.tdCol3Amministrazione{
+     width: 120px;
+}
+
+.trAlignBottom{
+    vertical-align:bottom;
+}
+
+.tdAlignCenter{
+    text-align:center;
+}
+
+.tdAlignRight{
+    text-align:right;
+}
+
+
+
+
+.label{
+    font-size: small;
+    font-family: Arial;
+}
+
+
+.listBox{
+width: 200px;
+height: 200px;
+background-color:#E6E7E8;
+border:1px solid silver;
+}
+
+.listBox option {
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 10px;
+border-bottom: 1px solid white;
+}
+
+.listBoxBig {
+width: 300px;
+height: 200px;
+}
+
+.listBoxBig option {
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 10px;
+border-bottom: 1px solid #E6E7E8;
+}
+
+.listBoxMedium{
+width: 200px;
+height: 80px;
+background-color:#E6E7E8;
+border:1px solid silver;
+}
+
+.listBoxMedium option {
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 10px;
+border-bottom: 1px solid white;
+}
+
+
+/*GESTIONE PROFILI*/
+
+
+.tdCol1Profili{
+}
+.tdCol2Profili{
+     width: 200px;
+}
+
+.tdCol3Profili{
+     width: 150px;
+}
+
+.tdCol4Profili{
+     width: 190px;
+}
+.tdCol5Profili{
+     width: 200px;
+}
+.tdCol6Profili{
+     width: 98%;
+}
+
+.floatRight{
+    float:right;
+    margin-right:15px;
+}
+
+
+
+.divContentRowProfili{
+height: 290px;
+border: 1px solid #E6E7E8;
+}
+
+.divGridViewProfili{
+height: 220px;
+width: 440px;
+/*margin-top:12px;
+margin-bottom:10px;*/
+border:1px solid;
+/*overflow-y:auto;
+overflow-x:hidden;*/
+}
+
+/*.divGridViewProfili {
+    height: 290px;
+    width: 400px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    float: left;
+}*/
+
+.divGridViewProfili2{
+height: 220px;
+width: 98%;
+/*margin-top:12px;
+margin-bottom:10px;*/
+border:1px solid;
+/*overflow-y:auto;
+overflow-x:hidden;*/
+}
+
+.divGridViewProfiliSmall{
+height: 220px;
+width: 400px;
+/*margin-top:12px;
+margin-bottom:10px;*/
+border:1px solid;
+/*overflow-y:auto;
+overflow-x:hidden;*/
+}
+
+.divGridViewProfiliMedium{
+height: 220px;
+width: 500px;
+/*margin-top:12px;
+margin-bottom:10px;*/
+border:1px solid;
+/*overflow-y:auto;
+overflow-x:hidden;*/
+}
+
+.divGridViewProfiliLarge{
+height: 220px;
+width: 650px;
+/*margin-top:12px;
+margin-bottom:10px;*/
+border:1px solid;
+/*overflow-y:auto;
+overflow-x:hidden;*/
+}
+
+.divGridViewImport {
+    height: 380px;
+}
+
+.tableArchivio{
+    margin-top:10px;
+    margin-left: 10px;
+}
+/*RICERCA RELAZIONI*/
+
+.tdLabelRicercaRelazioni{
+    /*width:200px;*/
+}
+
+.tdTextBoxRicercaRelazioni{
+     /*width:200px;*/
+}
+
+
+ .RadioButtonWidth label {  margin-right:30px; }  
+
+
+ .divGridViewImport{
+height: 470px;
+}

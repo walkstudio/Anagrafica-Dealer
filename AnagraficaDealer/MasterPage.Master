@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Spindox.AnagraficaDealer.MasterPage" %>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+    <script type="text/javascript" src="Resources/Scripts/jquery.1.8.2.min.js"></script>
+    <script type="text/javascript" src="Resources/Scripts/jquery-ui.1.9.1.min.js"></script>
+    <script type="text/javascript" src="Resources/Scripts/gridviewScroll.js"></script>
+    <script type="text/javascript" src="Resources/Scripts/AD-Scripts.js"></script>
+
+    <link href="Resources/Stylesheets/AD-MasterPage.css" rel="stylesheet" />
+    <link href="Resources/Stylesheets/AD-Popup.css" rel="stylesheet" />
+    <link href="Resources/Stylesheets/GridviewScroll.css" rel="stylesheet" />
+    <link href="Resources/Stylesheets/DettaglioDealer.css" rel="stylesheet" />
+    <link href="Resources/Stylesheets/AD-Stylesheet.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]> 
+       <link href="Resources/Stylesheets/AD-Stylesheet-ie8.css" rel="stylesheet" />
+    <![endif]-->
+
+    <!--[if !IE]><!-->
+
+    <!--<![endif]-->
+
+    <script type="text/javascript">
+ 
+var clicked = false;  
+ function CheckBrowser()  
+   {      
+      if (clicked == false)   
+         {      
+          //Browser closed   
+         }        else  
+          {  
+          //redirected
+             clicked = false; 
+           } 
+   }  
+  function bodyUnload() 
+   {      
+      if (clicked == false)//browser is closed  
+          {   
+         var request = GetRequest();  
+           request.open  ("POST", "LogOut.aspx", false);    
+       request.send();    
+        } 
+   } 
+ 
+   function GetRequest()  
+     {       
+     var xmlhttp = new XMLHttpRequest();
+        
+        return xmlhttp;
+      } 
+ 
+</script>
+    <title>Anagrafica Dealer</title>
+
+    <asp:ContentPlaceHolder ID="HeaderContentPlaceHolder" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</head>
+<body onunload="bodyUnload();" onclick="clicked=true;">
+    <form id="form1" runat="server" defaultbutton="btnDisableEnter">
+        <asp:Button ID="btnDisableEnter" runat="server" Text="" OnClientClick="return false;" Style="display: none;" />
+        <div class="divHeaderTable">
+            <div class="divRow">
+                <div class="divHeaderLogoColumn" style="cursor: pointer;" onclick="goTo('Default.aspx');">
+                    <img id="imgLogo" runat="server" src="~/Resources/Images/Master/Logo_AD.png" style="width: 180px"/>
+                </div>
+
+                <div id="divMenu" runat="server" class="divHeaderMenuColumn">
+                    <div id="divMenuRicerca" runat="server" class="divMenuTab" onclick="goTo('Ricerca.aspx');">
+                        <asp:Image ID="imgPagina" runat="server" ImageUrl="~/Resources/Images/Menu/search_manage.png" />
+                        <label class="labelMenu">RICERCA DEALER</label>
+                    </div>
+                    <div id="divMenuRelazioni" runat="server" class="divMenuTab" onclick="goTo('RicercaRelazioni.aspx');">
+                        <asp:Image ID="imgPagina2" runat="server" ImageUrl="~/Resources/Images/Menu/new_sim.png" />
+                        <label class="labelMenu">RAGIONI SOCIALI CORRELATE</label>
+                    </div>
+                     <div id="divMenuArchivio" runat="server" class="divMenuTab" onclick="">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Resources/Images/Menu/reporting.png" />
+                        <label class="labelMenu">ARCHIVIO E REPORT</label>
+                    </div>
+                </div>
+
+                <div id="divAmministrazione" runat="server" class="divHeaderFunctionColumn">
+                    <table class="tableUtente">
+                        <tr>
+                            <td rowspan="3" class="tdImg">
+                                <asp:ImageButton ID="imgUtente" runat="server" ImageUrl="~/Resources/Images/Master/user_disabled.png" ToolTip="Amministrazione non abilitata" OnClick="imgUtente_Click" Enabled="false" CssClass="noCursor" />
+                            </td>
+                            <td colspan="2">
+                                <asp:Label ID="utenteLabel" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="ruoloLabel" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+            <div class="divContentRow">
+                <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <asp:HiddenField ID="RicercaSelectedHidden" runat="server" Value="false" />
+    </form>
+</body>
+</html>
+    <%if (ConfigurationManager.AppSettings["test"] == "true"){ %>  
+<p>
+    <a href="DettaglioDealer.aspx">DettaglioDealer.aspx</a></p>
+<%} %>
+
+

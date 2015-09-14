@@ -1,0 +1,15 @@
+﻿USE AnagraficaDealer
+
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Punto Assistenza Indipendente' WHERE NomeCanale = 'AT'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Partner Shop' WHERE NomeCanale = 'I1'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Large Account' WHERE NomeCanale = 'I2'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Flagship' WHERE NomeCanale = 'I3'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Master Dealer' WHERE NomeCanale = 'I5'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Data Channel' WHERE NomeCanale = 'I6'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Vodafone Store' WHERE NomeCanale = 'I7'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'On Line Store' WHERE NomeCanale = 'I8'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'MVNO' WHERE NomeCanale = 'I9'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Consumer G.D.' WHERE NomeCanale = 'IA'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Partner Chain' WHERE NomeCanale = 'IB'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'Special Channel' WHERE NomeCanale = 'O4'
+UPDATE Dealer.Canale SET DescrizioneCanale = 'ONE TO ONE' WHERE NomeCanale = 'O9'

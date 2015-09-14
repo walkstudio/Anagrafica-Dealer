@@ -1,0 +1,9 @@
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\bin\Debug\AnagraficaDealerDatabase.dacpac
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\bin\Debug\AnagraficaDealerDatabase.dll
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\bin\Debug\AnagraficaDealerDatabase.pdb
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\obj\Debug\Model.xml
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\obj\Debug\refactor.xml
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\obj\Debug\postdeploy.sql
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\obj\Debug\predeploy.sql
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\obj\Debug\AnagraficaDealerDatabase.dll
+C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerDatabase\obj\Debug\AnagraficaDealerDatabase.pdb
