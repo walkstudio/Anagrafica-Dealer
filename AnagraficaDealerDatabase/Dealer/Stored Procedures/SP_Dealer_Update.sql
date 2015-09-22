@@ -388,12 +388,12 @@ BEGIN TRANSACTION DealerUpdate
 		INNER JOIN Dealer.Dealer t3 ON t3.IDDealer = t1.IDDealer
 		WHERE t1.NomeCampo = 'CodiceVogi'
 
-		UPDATE InfoGenerali.InfoGenerali
-		SET Email = NULLIF(t1.DatoNuovo,'')
-		FROM #TempTableXml t1
-		INNER JOIN InfoGenerali.InfoGenerali t2 ON t1.IDDealer = t2.IDDealer
-		INNER JOIN Dealer.Dealer t3 ON t3.IDDealer = t1.IDDealer
-		WHERE t1.NomeCampo = 'Email'
+		--UPDATE InfoGenerali.InfoGenerali
+		--SET Email = NULLIF(t1.DatoNuovo,'')
+		--FROM #TempTableXml t1
+		--INNER JOIN InfoGenerali.InfoGenerali t2 ON t1.IDDealer = t2.IDDealer
+		--INNER JOIN Dealer.Dealer t3 ON t3.IDDealer = t1.IDDealer
+		--WHERE t1.NomeCampo = 'Email'
 
 		UPDATE InfoGenerali.InfoGenerali
 		SET PEC = NULLIF(t1.DatoNuovo,'')
@@ -469,7 +469,13 @@ BEGIN TRANSACTION DealerUpdate
 		SET IDStato = 5
 		FROM #TempTableXml t1
 		INNER JOIN Dealer.Dealer t2 ON t2.IDDealer = t1.IDDealer
-		WHERE t1.NomeCampo = 'DataInvioDisdetta' AND t2.IDStato = 1
+		WHERE t1.NomeCampo = 'DataInvioDisdetta' AND t2.IDStato not in (2,5)
+
+		UPDATE Dealer.Dealer
+		SET IDStato = IDStatoSAP
+		FROM #TempTableXml t1
+		INNER JOIN Dealer.Dealer t2 ON t2.IDDealer = t1.IDDealer
+		WHERE t1.NomeCampo = 'DataInvioDisdetta' AND (t1.DatoNuovo = '' OR t1.DatoNuovo is null)
 
 		UPDATE Disdetta.Disdetta
 		SET DataTerminePreavviso = NULLIF(Convert(Datetime, t1.DatoNuovo, 103),'')

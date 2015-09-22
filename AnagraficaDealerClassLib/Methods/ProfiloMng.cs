@@ -63,7 +63,7 @@ namespace AnagraficaDealerClassLib.Methods
             sqlop = new SqlOperations();
             sqlop.databaseConnection = ConfigurationManager.ConnectionStrings["cs"].ToString();
 
-            DbParameter[] dbp = new DbParameter[11];
+            DbParameter[] dbp = new DbParameter[12];
 
             dbp[0] = new SqlParameter();
             dbp[0].ParameterName = "NomeProfilo";
@@ -147,6 +147,12 @@ namespace AnagraficaDealerClassLib.Methods
             dbp[10].Direction = ParameterDirection.Input;
             dbp[10].Value = autorizzazioneCampiXml.ToString();
 
+            dbp[11] = new SqlParameter();
+            dbp[11].ParameterName = "IDRuolo";
+            dbp[11].DbType = DbType.Int32;
+            dbp[11].Direction = ParameterDirection.Input;
+            dbp[11].Value = myProfilo.IDRuolo;
+
             SqlCommandObject sco = new SqlCommandObject();
             sco.SPName = "Utenti.SP_Profilo_Insert";
             sco.SPParams = dbp;
@@ -165,7 +171,7 @@ namespace AnagraficaDealerClassLib.Methods
             sqlop = new SqlOperations();
             sqlop.databaseConnection = ConfigurationManager.ConnectionStrings["cs"].ToString();
 
-            DbParameter[] dbp = new DbParameter[12];
+            DbParameter[] dbp = new DbParameter[13];
 
             dbp[0] = new SqlParameter();
             dbp[0].ParameterName = "IDProfilo";
@@ -255,6 +261,12 @@ namespace AnagraficaDealerClassLib.Methods
             dbp[11].Direction = ParameterDirection.Input;
             dbp[11].Value = autorizzazioneCampiXml.ToString();
 
+            dbp[12] = new SqlParameter();
+            dbp[12].ParameterName = "IDRuolo";
+            dbp[12].DbType = DbType.Int32;
+            dbp[12].Direction = ParameterDirection.Input;
+            dbp[12].Value = myProfilo.IDRuolo;
+
             SqlCommandObject sco = new SqlCommandObject();
             sco.SPName = "Utenti.SP_Profilo_Update";
             sco.SPParams = dbp;
@@ -293,6 +305,44 @@ namespace AnagraficaDealerClassLib.Methods
                 return proc;
 
             return "";
+        }
+
+        internal DataTable GetAllRuoli()
+        {
+
+            sqlop = new SqlOperations();
+            sqlop.databaseConnection = ConfigurationManager.ConnectionStrings["cs"].ToString();
+
+            SqlCommandObject sco = new SqlCommandObject();
+            sco.SPName = "Utenti.SP_Ruolo_GetAll";
+            DataTable dt;
+            string proc = sqlop.ExecuteProcedure(sco, out dt);
+
+            return dt;
+        }
+
+        internal DataTable IsCodRuoloActive(int idObj)
+        {
+
+            sqlop = new SqlOperations();
+            sqlop.databaseConnection = ConfigurationManager.ConnectionStrings["cs"].ToString();
+
+            DbParameter[] dbp = new DbParameter[1];
+
+            dbp[0] = new SqlParameter();
+            dbp[0].ParameterName = "IDProfilo";
+            dbp[0].DbType = DbType.Int32;
+            dbp[0].Direction = ParameterDirection.Input;
+            dbp[0].Value = idObj;
+
+            SqlCommandObject sco = new SqlCommandObject();
+            sco.SPName = "Utility.SP_Is_CodRuolo_Active";
+            sco.SPParams = dbp;
+
+            DataTable dt;
+            string proc = sqlop.ExecuteProcedure(sco, out dt);
+
+            return dt;
         }
     }
 }

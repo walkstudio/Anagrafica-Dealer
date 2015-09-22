@@ -137,7 +137,7 @@ namespace Spindox.AnagraficaDealer
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static List<string> GetLocalita(string pre, string prov)
+        public static List<string> GetLocalita(string pre, string prov, string regione)
         {
             DataTable dt = new DataTable();
 
@@ -146,7 +146,7 @@ namespace Spindox.AnagraficaDealer
 
 
             List<string> allName = new List<string>();
-            dt = proxyMtd.GetLocalita(pre,prov);
+            dt = proxyMtd.GetLocalita(pre,prov,regione);
 
             DataRow[] allNameDR = (from a in dt.AsEnumerable()
                                    where a.Field<string>("Localita").ToString().StartsWith(pre, true, CultureInfo.CurrentCulture)
@@ -356,6 +356,13 @@ namespace Spindox.AnagraficaDealer
                         allInfo.Add(li);
                     }
                     break;
+                case "TA":
+                    foreach (DataRow dr in allNameDR)
+                    {
+                        ListItem li = new ListItem(dr.Field<string>("TechAss").ToString(), dr.Field<string>("TechAss").ToString());
+                        allInfo.Add(li);
+                    }
+                    break;
             }
 
 
@@ -385,7 +392,57 @@ namespace Spindox.AnagraficaDealer
             }
             catch { return -1; }
 
-        }      
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static List<string> GetFunzionari(string pre)
+        {
+            DataTable dt = new DataTable();
+
+            AnagraficaDealerClassLib.AnagraficaDealerService proxyMtd;
+            proxyMtd = new AnagraficaDealerClassLib.AnagraficaDealerService();
+
+
+            List<string> allName = new List<string>();
+            dt = proxyMtd.GetAllFunzionari(pre);
+
+            DataRow[] allNameDR = (from a in dt.AsEnumerable()
+                                   where a.Field<string>("Funzionario").ToString().StartsWith(pre, true, CultureInfo.CurrentCulture)
+                                   select a).ToArray();
+
+            foreach (DataRow dr in allNameDR)
+            {
+                allName.Add(dr.Field<string>("Funzionario").ToString());
+
+            }
+            return allName;
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static List<string> GetSupporti(string pre)
+        {
+            DataTable dt = new DataTable();
+
+            AnagraficaDealerClassLib.AnagraficaDealerService proxyMtd;
+            proxyMtd = new AnagraficaDealerClassLib.AnagraficaDealerService();
+
+
+            List<string> allName = new List<string>();
+            dt = proxyMtd.GetAllSupporti(pre);
+
+            DataRow[] allNameDR = (from a in dt.AsEnumerable()
+                                   where a.Field<string>("Supporti").ToString().StartsWith(pre, true, CultureInfo.CurrentCulture)
+                                   select a).ToArray();
+
+            foreach (DataRow dr in allNameDR)
+            {
+                allName.Add(dr.Field<string>("Supporti").ToString());
+
+            }
+            return allName;
+        }
 
 
     }

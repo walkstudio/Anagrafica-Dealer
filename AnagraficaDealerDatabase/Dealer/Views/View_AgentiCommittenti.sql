@@ -1,5 +1,4 @@
-﻿
-CREATE VIEW [Dealer].[View_AgentiCommittenti]
+﻿CREATE VIEW Dealer.View_AgentiCommittenti
 AS
 SELECT        Dealer.Dealer.IDDealer, Dealer.Dealer.Indirizzo, Dealer.Dealer.PIVA, Dealer.Dealer.Telefono, Dealer.Dealer.Fax, Dealer.Dealer.DataModifica, 
                          Dealer.Dealer.IDUtente, Dealer.Dealer.IDTipoDealer, Dealer.Dealer.IDStato, Dealer.Dealer.Codice, Dealer.Stato.NomeStato AS Stato, 
@@ -8,7 +7,7 @@ SELECT        Dealer.Dealer.IDDealer, Dealer.Dealer.Indirizzo, Dealer.Dealer.PIV
                          Negozio.Negozio.Telefono AS TelefonoNegozio, Negozio.Negozio.NomeTitolare, Negozio.Negozio.Supporti, Negozio.Cluster.Cluster, 
                          Catene.TipoRemunerazione.TipoRemunerazione, Vendite.Vendite.CAP, Vendite.Vendite.Localita, Vendite.Vendite.Nome1, Utility.Provincia.Nome AS Provincia, 
                          Utility.Regione.Nome AS Regione, Disdetta.Disdetta.VecchioCodice, Disdetta.Disdetta.DataTerminePreavviso, Disdetta.Disdetta.DataInvioDisdetta, 
-                         Disdetta.Disdetta.GiorniPreavviso, Disdetta.Disdetta.Note, Utility.Zona.Nome AS Area, Disdetta.DettaglioDisdetta.DataDisdetta, Vendite.VenditeCanali.Cliente, 
+                         Disdetta.Disdetta.GiorniPreavviso, Disdetta.Disdetta.Note, Disdetta.DettaglioDisdetta.DataDisdetta, Vendite.VenditeCanali.Cliente, 
                          Vendite.VenditeCanali.GruppoPrezzi, Vendite.VenditeCanali.Magazzino, Vendite.VenditeCanali.Nome2, Utenti.Funzionario.AGL AS CodiceFunzionario, 
                          Utenti.Funzionario.Nome AS Funzionario, Utenti.AreaManager.VKBUR AS CodiceAreaManager, Utenti.AreaManager.Nome AS AreaManager, 
                          InfoGenerali.InfoAgentiCommittenti.BOL, InfoGenerali.InfoAgentiCommittenti.DataAperturaCodice, InfoGenerali.InfoAgentiCommittenti.DataChiusuraCodice, 
@@ -17,8 +16,8 @@ SELECT        Dealer.Dealer.IDDealer, Dealer.Dealer.Indirizzo, Dealer.Dealer.PIV
                          Negozio.Negozio.CFTitolare, Negozio.Negozio.EmailTitolare, Vendite.VenditeCanali.FlagCancellazione, Disdetta.Richiedente.Richiedente, 
                          DettaglioAgenti.DettaglioAgenti.Plurimandatario, DettaglioAgenti.MaterialeEspositivo.MaterialeEspositivo, DettaglioAgenti.DettaglioAgenti.ZonaAssegnata, 
                          DettaglioAgenti.Dimensionamento.Dimensionamento, ProvinciaRea.Nome AS ProvRea, Dealer.Dealer.DataModificaUtente, Dealer.Canale.IDCanale, 
-                         Utility.Zona.IDZona AS IDArea, Utility.Regione.IDRegione, Utility.Provincia.IDProvincia, Negozio.Negozio.NomeContatto, 
-                         Dealer.Canale.DescrizioneCanale AS Canale, Area.IDOperativita AS IDOperativita
+                         Utility.Regione.IDRegione, Utility.Provincia.IDProvincia, Negozio.Negozio.NomeContatto, Dealer.Canale.DescrizioneCanale AS Canale, Area.Area.IDOperativita, 
+                         Vendite.Vendite.IDArea, Area.AreaDiCompetenza.NomeArea AS Area
 FROM            Dealer.Dealer INNER JOIN
                          Dealer.Stato ON Dealer.Dealer.IDStato = Dealer.Stato.IDStato INNER JOIN
                          Dealer.TipoDealer ON Dealer.Dealer.IDTipoDealer = Dealer.TipoDealer.IDTipoDealer LEFT OUTER JOIN
@@ -35,6 +34,8 @@ FROM            Dealer.Dealer INNER JOIN
                          Area.Operativita ON Area.Area.IDOperativita = Area.Operativita.IDOperativita LEFT OUTER JOIN
                          Area.Tipologia ON Area.Area.IDTipologia = Area.Tipologia.IDTipologia LEFT OUTER JOIN
                          Area.AreaAgentiCommittenti ON Area.Area.IDDealer = Area.AreaAgentiCommittenti.IDDealer LEFT OUTER JOIN
+                         Vendite.Vendite ON Dealer.Dealer.IDDealer = Vendite.Vendite.IDDealer LEFT OUTER JOIN
+                         Area.AreaDiCompetenza ON Vendite.Vendite.IDArea = Area.AreaDiCompetenza.IDAreaDiCompetenza LEFT OUTER JOIN
                          Negozio.Negozio ON Dealer.Dealer.IDDealer = Negozio.Negozio.IDDealer LEFT OUTER JOIN
                          Negozio.NegozioAgenti ON Negozio.Negozio.IDDealer = Negozio.NegozioAgenti.IDDealer LEFT OUTER JOIN
                          Negozio.Cluster ON Negozio.Negozio.IDCluster = Negozio.Cluster.IDCluster LEFT OUTER JOIN
@@ -42,7 +43,6 @@ FROM            Dealer.Dealer INNER JOIN
                          Negozio.OrarioDiApertura ON Negozio.Apre.IDOrarioApertura = Negozio.OrarioDiApertura.IDOrarioApertura LEFT OUTER JOIN
                          Catene.Catene ON Dealer.Dealer.IDDealer = Catene.Catene.IDDealer LEFT OUTER JOIN
                          Catene.TipoRemunerazione ON Catene.Catene.IDTipoRemunerazione = Catene.TipoRemunerazione.IDTipoRemunerazione LEFT OUTER JOIN
-                         Vendite.Vendite ON Dealer.Dealer.IDDealer = Vendite.Vendite.IDDealer LEFT OUTER JOIN
                          Vendite.VenditeCanali ON Vendite.Vendite.IDDealer = Vendite.VenditeCanali.IDDealer LEFT OUTER JOIN
                          Disdetta.Disdetta ON Dealer.Dealer.IDDealer = Disdetta.Disdetta.IDDealer LEFT OUTER JOIN
                          Disdetta.DettaglioDisdetta ON Disdetta.Disdetta.IDDealer = Disdetta.DettaglioDisdetta.IDDealer LEFT OUTER JOIN
@@ -59,7 +59,20 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 4, @leve
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane4', @value = N'
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane4', @value = N' Bottom = 394
+               Right = 647
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 68
          Width = 284
          Width = 1500
          Width = 1500
@@ -149,6 +162,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane4', @value = N'
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'Dealer', @level1type = N'VIEW', @level1name = N'View_AgentiCommittenti';
+
+
 
 
 
@@ -300,14 +315,13 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane3', @value = N' 0
             DisplayFlags = 280
             TopColumn = 0
          End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-      Begin ColumnWidths = 68', @level0type = N'SCHEMA', @level0name = N'Dealer', @level1type = N'VIEW', @level1name = N'View_AgentiCommittenti';
+         Begin Table = "AreaDiCompetenza (Area)"
+            Begin Extent = 
+               Top = 282
+               Left = 445
+              ', @level0type = N'SCHEMA', @level0name = N'Dealer', @level1type = N'VIEW', @level1name = N'View_AgentiCommittenti';
+
+
 
 
 

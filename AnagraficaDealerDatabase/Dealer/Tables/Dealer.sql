@@ -8,6 +8,7 @@
     [IDUtente]           INT           NULL,
     [IDTipoDealer]       INT           NULL,
     [IDStato]            INT           NULL,
+    [IDStatoSAP]         INT           NULL,
     [Codice]             NVARCHAR (50) NULL,
     [Attivo]             BIT           CONSTRAINT [DF_Dealer_Attivo] DEFAULT ((1)) NOT NULL,
     [Funz]               NVARCHAR (50) NOT NULL,
@@ -32,9 +33,11 @@
 
 
 
+
+
 GO
 CREATE TRIGGER [Dealer].[TR_StoricoIndirizzo_Update]
-   ON [Dealer].[Dealer] 
+   ON Dealer.Dealer 
    AFTER UPDATE
 AS 
 BEGIN
@@ -96,13 +99,12 @@ BEGIN
 	END
 END
 GO
-DISABLE TRIGGER [Dealer].[TR_StoricoIndirizzo_Update]
-    ON [Dealer].[Dealer];
+
 
 
 GO
 CREATE TRIGGER [Dealer].[TR_StoricoIndirizzo_Insert]
-   ON [Dealer].[Dealer] 
+   ON Dealer.Dealer 
    AFTER INSERT
 AS 
 BEGIN
@@ -129,6 +131,5 @@ BEGIN
 	END
 END
 GO
-DISABLE TRIGGER [Dealer].[TR_StoricoIndirizzo_Insert]
-    ON [Dealer].[Dealer];
+
 

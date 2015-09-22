@@ -58,13 +58,13 @@ namespace Spindox.AnagraficaDealer {
         protected global::System.Web.UI.WebControls.TextBox txtPIVA;
         
         /// <summary>
-        /// Controllo txtMasterDealerCode.
+        /// Controllo txMasterDealerCode.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMasterDealerCode;
+        protected global::System.Web.UI.WebControls.TextBox txMasterDealerCode;
         
         /// <summary>
         /// Controllo txtLocalita.
@@ -119,15 +119,6 @@ namespace Spindox.AnagraficaDealer {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCateneFunzionario;
-        
-        /// <summary>
-        /// Controllo txtCentroAssistenza.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCentroAssistenza;
         
         /// <summary>
         /// Controllo txtDataDisdetta.

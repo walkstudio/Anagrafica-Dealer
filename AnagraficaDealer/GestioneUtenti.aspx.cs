@@ -134,6 +134,8 @@ namespace Spindox.AnagraficaDealer
                     utente.IDProfilo = Convert.ToInt32(ddlProfiloUtente.SelectedItem.Value);
                     //profilo.NomeProfilo = ddlProfiloUtente.SelectedItem.Text;
 
+                    utente.CodRuolo = txtCodiceRuolo.Enabled ? txtCodiceRuolo.Text : "";
+
                     Boolean esiste = proxyMtd.InsertUtente(utente);
                    
 
@@ -168,6 +170,20 @@ namespace Spindox.AnagraficaDealer
             }
         }
 
+        protected void ddlProfiloUtente_Change(object sender, EventArgs e)
+        {
+            if(Page.IsPostBack)
+            {
+                int IDProfilo = Convert.ToInt32(ddlProfiloUtente.SelectedValue);
+                //DataTable utente = proxyMtd.GetUtente(Convert.ToInt32(IDUtenteHiddenField.Value));
+                DataTable codruolo = proxyMtd.IsCodRuoloActive(IDProfilo);
+
+                txtCodiceRuolo.Enabled = codruolo.Rows[0]["CodiceRuoloAttivo"] as bool? ?? false;
+                txtCodiceRuolo.ToolTip = "Ruolo associato per il profilo scelto: " + codruolo.Rows[0]["Ruolo"].ToString();
+
+            }
+        }
+
         protected void ModicaUtenteButton_Click(object sender, ImageClickEventArgs e)
         {
             try
@@ -185,6 +201,9 @@ namespace Spindox.AnagraficaDealer
                     utente.Email = txtEmailUtente.Text;
                     utente.UserID = txtUsernameUtente.Text;
                     utente.IDProfilo = Convert.ToInt32(ddlProfiloUtente.SelectedValue);
+
+                    utente.CodRuolo = txtCodiceRuolo.Enabled ? txtCodiceRuolo.Text : "" ;
+
 
                     String error = proxyMtd.UpdateUtente(utente);
 
@@ -218,6 +237,10 @@ namespace Spindox.AnagraficaDealer
             txtUsernameUtente.Text = dt.Rows[0]["UserID"].ToString();
 
             ddlProfiloUtente.SelectedValue = dt.Rows[0]["IDProfilo"].ToString();
+            txtCodiceRuolo.Text = dt.Rows[0]["CodRuolo"].ToString();
+            txtCodiceRuolo.ToolTip = "Ruolo profilo associato: " + dt.Rows[0]["Ruolo"].ToString();
+
+            txtCodiceRuolo.Enabled = dt.Rows[0]["CodiceRuoloAttivo"] as bool? ?? false;
 
             txtUsernameUtente.Enabled = false;
             btnCercaUtente.Visible = false;

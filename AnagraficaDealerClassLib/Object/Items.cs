@@ -29,6 +29,9 @@ namespace AnagraficaDealerClassLib
 
         [DataMember]
         public bool Attivo { set; get; }
+
+        [DataMember]
+        public string CodRuolo { set; get; }
     }
 
     public class Profilo
@@ -62,6 +65,9 @@ namespace AnagraficaDealerClassLib
 
         [DataMember]
         public bool Eccezioni { set; get; }
+
+        [DataMember]
+        public int IDRuolo { set; get; }
     }
 
     public class TipoDealer

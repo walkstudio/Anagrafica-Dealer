@@ -91,7 +91,19 @@ namespace AnagraficaDealerClassLib
             Methods.ProfiloMng profilo = new Methods.ProfiloMng();
             return profilo.DeleteProfilo(idObj);
         }
-           #endregion
+
+        public DataTable GetAllRuoli()
+        {
+            Methods.ProfiloMng profilo = new Methods.ProfiloMng();
+            return profilo.GetAllRuoli();
+        }
+
+        public DataTable IsCodRuoloActive(int idObj)
+        {
+            Methods.ProfiloMng profilo = new Methods.ProfiloMng();
+            return profilo.IsCodRuoloActive(idObj);
+        }
+        #endregion
 
         #region Metodi Export
         public DataTable GetAllExport(int fileType)
@@ -300,10 +312,10 @@ namespace AnagraficaDealerClassLib
 
         }
 
-        public DataTable GetLocalita(string pre,string prov)
+        public DataTable GetLocalita(string pre,string prov, string regione)
         {
             Methods.RicercaMng ricerca = new Methods.RicercaMng();
-            return ricerca.GetLocalita(pre,prov);
+            return ricerca.GetLocalita(pre,prov,regione);
         }
 
         public DataTable GetPartitaIva(string pre)
@@ -317,6 +329,18 @@ namespace AnagraficaDealerClassLib
         {
             Methods.RicercaMng ricerca = new Methods.RicercaMng();
             return ricerca.RicercaDealer(xmlInput,user);
+        }
+
+        public DataTable GetAllFunzionari(string pre)
+        {
+            Methods.RicercaMng ricerca = new Methods.RicercaMng();
+            return ricerca.GetAllFunzionari(pre);
+        }
+
+        public DataTable GetAllSupporti(string pre)
+        {
+            Methods.RicercaMng ricerca = new Methods.RicercaMng();
+            return ricerca.GetAllSupporti(pre);
         }
 
         #endregion

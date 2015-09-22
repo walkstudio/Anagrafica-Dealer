@@ -96,6 +96,15 @@
                                 <td>
                                     <asp:RequiredFieldValidator ID="rfvNomeProfilo" runat="server" ControlToValidate="txtNomeProfilo" CssClass="label" ErrorMessage="Nome profilo obbligatorio" ForeColor="Red" ValidationGroup="btnSalvaProfilo"></asp:RequiredFieldValidator>
                                 </td>
+                                <td>
+                                    <asp:Label ID="lblRuolo" runat="server" CssClass="lblSectionProfili" Text="Ruolo"></asp:Label>
+                                    </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlRuolo" runat="server" CssClass="ddlMedium ddlStyle" OnLoad="ddlRuolo_Load"></asp:DropDownList>
+                                </td>
+                                <td>
+                                    <%--<asp:RequiredFieldValidator ID="rfvRuolo" runat="server" ControlToValidate="ddlRuolo" CssClass="label" ErrorMessage="Ruolo obbligatorio" ForeColor="Red" ValidationGroup="btnSalvaProfilo"></asp:RequiredFieldValidator> --%>
+                                </td>
                             </tr>
                         </table>
                     </td>

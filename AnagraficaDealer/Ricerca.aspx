@@ -173,7 +173,7 @@
                     </tr>
                     <tr>
                         <td style="width:300px" colspan="2">
-                            <label for="ddlSClasse" class="label">Codice Master Dealer</label>
+                            <label for="txMasterDealerCode" class="label">Codice Master Dealer</label>
                         </td>
                         <td style="width:150px">&nbsp;</td>
                         <td style="width:150px">&nbsp;</td>
@@ -181,7 +181,7 @@
                     <tr>
                         <td colspan="2">
                             <div class="ui-widget" style="text-align:left">
-                                <asp:TextBox ClientIDMode="Static" Desc="MasterDealer" showexport="no" ID="txtMasterDealerCode" typedb="text" runat="server" Width="150px" CssClass="textbox" />
+                                <asp:TextBox ClientIDMode="Static" Desc="MasterDealer" showexport="no" ID="txMasterDealerCode" typedb="text" runat="server" Width="150px" CssClass="textbox" Text="" />
                             </div>
                         </td>
                         <td>
@@ -600,11 +600,11 @@
                             </td>
                             <td class="ricercaSpace"></td>
                             <td >
-<%--                                <select id="ddlSTechAss" typedb="combo" Desc="CentroAssistenzaTecnica">
-                                </select>--%>
-                                <asp:TextBox ClientIDMode="Static" ID="txtCentroAssistenza" Desc="CentroAssistenzaTecnica" typedb="text" runat="server" Columns="40" Text="--Centro Assistenza Tecnica--" CssClass="textbox"/>
+                               <select id="ddlSTechAss" typedb="combo" Desc="IDCentroAssistenzaTecnica" class="cmbRicerca">
+                                </select>
+                               <%-- <asp:TextBox ClientIDMode="Static" ID="txtCentroAssistenza" Desc="CentroAssistenzaTecnica" typedb="text" runat="server" Columns="40" Text="--Centro Assistenza Tecnica--" CssClass="textbox"/> --%>
                             </td>
-                            <td Desc="CentroAssistenzaTecnica" class="txtAlignRight">
+                            <td Desc="IDCentroAssistenzaTecnica" class="txtAlignRight">
                             </td>
                             <td class="ricercaSpace"></td>
                             <td class="label">
@@ -718,8 +718,11 @@
                                 <input type="checkbox" id="ExportchkFTE" typedb="export" title='Seleziona per esportare in Excel' Desc="FTE" />
                             </td>
                             <td class="ricercaSpace"></td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="label"> Nome Contatto</td>
+                            <td>
+                                <input type="checkbox" id="ExportchkNomeContatto" typedb="export" title='Seleziona per esportare in Excel' Desc="NomeContatto" />
+                                <%--<asp:TextBox ClientIDMode="Static" ID="txtNomeContatto" typedb="text" Desc="NomeContatto" runat="server" Columns="60" Text="--Nome Contatto--" Font-Size="12px" />--%>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -1071,17 +1074,14 @@
                                 &nbsp;
                                 Al <asp:TextBox ClientIDMode="Static" typedb="dateperiod" ID="txtChiusuraCodiceAl" Desc="DataChiusuraCodiceAl" runat="server" Columns="12"  CssClass="textbox" />
                             </td>
-                        </tr>                             
+                        </tr> 
+                       <!--                            
                         <tr>
                             <td></td>
-                            <td class="label">
-                                Nome Contatto
-                            </td>
-                            <td>
-                                <input type="checkbox" id="ExportchkNomeContatto" typedb="export" title='Seleziona per esportare in Excel' Desc="NomeContatto" />
-                                <%--<asp:TextBox ClientIDMode="Static" ID="txtNomeContatto" typedb="text" Desc="NomeContatto" runat="server" Columns="60" Text="--Nome Contatto--" Font-Size="12px" />--%>
-                            </td>
+                            <td class="label">&nbsp;</td>
+                            <td>&nbsp;</td>
                         </tr> 
+                       -->
                     </table>
                 </td>
             </tr> 

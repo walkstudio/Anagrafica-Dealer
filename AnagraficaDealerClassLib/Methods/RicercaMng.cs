@@ -176,6 +176,9 @@ namespace AnagraficaDealerClassLib.Methods
                 case "AC":
                     sco.SPName = "[Area].[SP_AreaCompetenza_GetAll]";
                     break;
+                case "TA":
+                    sco.SPName = "[Negozio].[SP_CentroAssistenzaTecnica_GetAll]";
+                    break;
             }
 
             DataTable dt;
@@ -233,7 +236,7 @@ namespace AnagraficaDealerClassLib.Methods
 
         }
 
-        internal  DataTable GetLocalita(string pre,string prov)
+        internal  DataTable GetLocalita(string pre,string prov, string regione)
         {
 
             sqlop = new SqlOperations();
@@ -241,7 +244,7 @@ namespace AnagraficaDealerClassLib.Methods
 
             SqlCommandObject sco = new SqlCommandObject();
 
-            DbParameter[] dbp = new DbParameter[2];
+            DbParameter[] dbp = new DbParameter[3];
             dbp[0] = new SqlParameter();
             dbp[0].ParameterName = "Localita";
             dbp[0].DbType = DbType.String;
@@ -253,6 +256,12 @@ namespace AnagraficaDealerClassLib.Methods
             dbp[1].DbType = DbType.String;
             dbp[1].Direction = ParameterDirection.Input;
             dbp[1].Value = prov;
+
+            dbp[2] = new SqlParameter();
+            dbp[2].ParameterName = "Regione";
+            dbp[2].DbType = DbType.String;
+            dbp[2].Direction = ParameterDirection.Input;
+            dbp[2].Value = regione;
 
             sco.SPName = "[Dealer].[SP_RicercaLocalita_Get]";
             sco.SPParams = dbp;
@@ -319,6 +328,52 @@ namespace AnagraficaDealerClassLib.Methods
             IEnumerable<dynamic> Ricerca = outputList.Cast<dynamic>().Where(x => x.Nome.Contains("@Ricerca"));
 
             return Convert.ToString(Ricerca.First().Value);
+        }
+
+        internal DataTable GetAllFunzionari(string pre)
+        {
+
+            sqlop = new SqlOperations();
+            sqlop.databaseConnection = ConfigurationManager.ConnectionStrings["cs"].ToString();
+
+            SqlCommandObject sco = new SqlCommandObject();
+            DbParameter[] dbp = new DbParameter[1];
+            dbp[0] = new SqlParameter();
+            dbp[0].ParameterName = "Funzionario";
+            dbp[0].DbType = DbType.String;
+            dbp[0].Direction = ParameterDirection.Input;
+            dbp[0].Value = pre;
+
+            sco.SPParams = dbp;
+            sco.SPName = "[Dealer].[SP_Funzionari_GetAll]";
+            DataTable dt;
+            string proc = sqlop.ExecuteProcedure(sco, out dt);
+
+            return dt;
+
+        }
+
+        internal DataTable GetAllSupporti(string pre)
+        {
+
+            sqlop = new SqlOperations();
+            sqlop.databaseConnection = ConfigurationManager.ConnectionStrings["cs"].ToString();
+
+            SqlCommandObject sco = new SqlCommandObject();
+            DbParameter[] dbp = new DbParameter[1];
+            dbp[0] = new SqlParameter();
+            dbp[0].ParameterName = "Supporto";
+            dbp[0].DbType = DbType.String;
+            dbp[0].Direction = ParameterDirection.Input;
+            dbp[0].Value = pre;
+
+            sco.SPParams = dbp;
+            sco.SPName = "[Dealer].[SP_Supporti_GetAll]";
+            DataTable dt;
+            string proc = sqlop.ExecuteProcedure(sco, out dt);
+
+            return dt;
+
         }
 
     }

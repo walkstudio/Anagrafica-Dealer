@@ -1,5 +1,4 @@
-﻿
-CREATE VIEW [Dealer].[View_Point]
+﻿CREATE VIEW Dealer.View_Point
 AS
 SELECT        Dealer.Dealer.IDDealer, Dealer.Dealer.Indirizzo, Dealer.Dealer.PIVA, Dealer.Dealer.Telefono, Dealer.Dealer.Fax, Dealer.Dealer.DataModifica, 
                          Dealer.Dealer.IDUtente, Dealer.Dealer.IDTipoDealer, Dealer.Dealer.IDStato, Dealer.Dealer.Codice, Dealer.Stato.NomeStato AS Stato, 
@@ -8,7 +7,7 @@ SELECT        Dealer.Dealer.IDDealer, Dealer.Dealer.Indirizzo, Dealer.Dealer.PIV
                          Dealer.CondizioniPagamento.NomeCondizioniPagamento AS CondizioniPagamento, Dealer.Canale.NomeCanale, Negozio.Negozio.Telefono AS TelefonoNegozio, 
                          Negozio.Negozio.NomeTitolare, Negozio.Negozio.Supporti, Negozio.Cluster.Cluster, Vendite.Vendite.CAP, Vendite.Vendite.Localita, Vendite.Vendite.Nome1, 
                          Utility.Provincia.Nome AS Provincia, Utility.Regione.Nome AS Regione, Disdetta.Disdetta.VecchioCodice, Disdetta.Disdetta.DataTerminePreavviso, 
-                         Disdetta.Disdetta.DataInvioDisdetta, Disdetta.Disdetta.GiorniPreavviso, Disdetta.Disdetta.Note, Utility.Zona.Nome AS Area, Disdetta.DettaglioDisdetta.DataDisdetta, 
+                         Disdetta.Disdetta.DataInvioDisdetta, Disdetta.Disdetta.GiorniPreavviso, Disdetta.Disdetta.Note, Disdetta.DettaglioDisdetta.DataDisdetta, 
                          Vendite.VenditeCanali.Cliente, Vendite.VenditeCanali.GruppoPrezzi, Vendite.VenditeCanali.Magazzino, Vendite.VenditeCanali.Nome2, 
                          Utenti.Funzionario.AGL AS CodiceFunzionario, Utenti.Funzionario.Nome AS Funzionario, Utenti.AreaManager.VKBUR AS CodiceAreaManager, 
                          Utenti.AreaManager.Nome AS AreaManager, Negozio.TipologiaArredo.TipologiaArredo, InfoGenerali.InfoPoint.DataAperturaNegozio, 
@@ -16,8 +15,8 @@ SELECT        Dealer.Dealer.IDDealer, Dealer.Dealer.Indirizzo, Dealer.Dealer.PIV
                          Negozio.NegozioPoint.IndirizzoSpedizioneMateriale, Negozio.NegozioPoint.NumeroVetrine, Negozio.NegozioPoint.PointSpecial, 
                          Negozio.DimensioneAreaVendita.DimensioneAreaVendita, ISNULL(Vendite.Vendite.Nome1, '') + ' ' + ISNULL(Vendite.VenditeCanali.Nome2, '') AS RagioneSociale, 
                          Disdetta.Richiedente.Richiedente, ProvinciaRea.Nome AS ProvRea, Negozio.Negozio.CFTitolare, Negozio.Negozio.EmailTitolare, Dealer.Dealer.DataModificaUtente, 
-                         Dealer.Canale.IDCanale, Utility.Zona.IDZona AS IDArea, Utility.Regione.IDRegione, Utility.Provincia.IDProvincia, Negozio.Negozio.NomeContatto, 
-                         Dealer.Canale.DescrizioneCanale AS Canale, Area.IDOperativita AS IDOperativita
+                         Dealer.Canale.IDCanale, Utility.Regione.IDRegione, Utility.Provincia.IDProvincia, Negozio.Negozio.NomeContatto, Dealer.Canale.DescrizioneCanale AS Canale, 
+                         Area.Area.IDOperativita, Vendite.Vendite.IDZona AS IDArea, Utility.Zona.Nome AS Area
 FROM            Dealer.Dealer INNER JOIN
                          Dealer.Stato ON Dealer.Dealer.IDStato = Dealer.Stato.IDStato INNER JOIN
                          Dealer.TipoDealer ON Dealer.Dealer.IDTipoDealer = Dealer.TipoDealer.IDTipoDealer LEFT OUTER JOIN
@@ -46,7 +45,7 @@ FROM            Dealer.Dealer INNER JOIN
                          Utility.Provincia ON Vendite.Vendite.IDProvincia = Utility.Provincia.IDProvincia LEFT OUTER JOIN
                          Utility.Provincia AS ProvinciaRea ON Area.AreaPoint.IDProvinciaRea = ProvinciaRea.IDProvincia LEFT OUTER JOIN
                          Utility.Regione ON Utility.Provincia.IDRegione = Utility.Regione.IDRegione LEFT OUTER JOIN
-                         Utility.Zona ON Utility.Provincia.IDZona = Utility.Zona.IDZona
+                         Utility.Zona ON Vendite.Vendite.IDZona = Utility.Zona.IDZona
 WHERE        (Dealer.Dealer.IDTipoDealer = 3)
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 4, @level0type = N'SCHEMA', @level0name = N'Dealer', @level1type = N'VIEW', @level1name = N'View_Point';

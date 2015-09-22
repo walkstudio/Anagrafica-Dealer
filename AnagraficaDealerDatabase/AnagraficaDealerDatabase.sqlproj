@@ -105,6 +105,9 @@
     <Folder Include="Area\Stored Procedures\" />
     <Folder Include="Negozio\Stored Procedures\" />
     <Folder Include="Scripts\LoadDataPre" />
+    <Folder Include="Report\" />
+    <Folder Include="Report\Views\" />
+    <Folder Include="Report\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Utenti\Tables\Accede.sql" />
@@ -383,6 +386,40 @@
     <None Include="Scripts\LoadDataPre\Dealer_Stato.sql" />
     <Build Include="Import\Tables\Dipendenti.sql" />
     <Build Include="Import\Stored Procedures\SP_ImportDipendenti.sql" />
+    <Build Include="Report\Views\V_Reports_PosPod.sql" />
+    <Build Include="Report\Views\V_Reports_Committenti.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPOSCanaliGestiti_T2_T3.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPOSCanaliGestiti_T1.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaDealerAltriCanali_T2_T3.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaDealerAltriCanali_T1.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaDealerCanaliGestiti_T5_T6.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaDealerCanaliGestiti_T4.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaDealerCanaliGestiti_T2_T3.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaDealerCanaliGestiti_T1.sql" />
+    <Build Include="Security\Report.sql" />
+    <Build Include="Utility\Stored Procedures\GetTableByTokenAndApplication.sql" />
+    <Build Include="Report\Views\V_Reports_SubAgenti.sql" />
+    <Build Include="Report\Views\V_Reports_PosPod_old.sql" />
+    <Build Include="Report\Views\V_Reports_Point.sql" />
+    <Build Include="Report\Views\V_Reports_AgentiCommittenti.sql" />
+    <Build Include="Dealer\Views\View_SubAgenti_old.sql" />
+    <Build Include="Dealer\Views\View_PosPod_old.sql" />
+    <Build Include="Dealer\Views\View_Point_old.sql" />
+    <Build Include="Dealer\Views\View_Committenti_old.sql" />
+    <Build Include="Dealer\Views\View_AgentiCommittenti_old.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPosCanaliGestiti_T5_T6.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPosCanaliGestiti_T4.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPosAltriCanaliInCC_T1.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPodCanaliGestiti_T5_T6.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPodCanaliGestiti_T4.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPodCanaliGestiti_T2_T3.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaPodCanaliGestiti_T1.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaNegoziTopCC_T4.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaNegoziTopCC_T2_T3.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaNegoziTopCC_T1.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaAgenzieAT_T4.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaAgenzieAT_T2_T3.sql" />
+    <Build Include="Report\Stored Procedures\Cruscotto_AnagraficaAgenzieAT_T1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AntonelloLocalDbToProject.scmp" />

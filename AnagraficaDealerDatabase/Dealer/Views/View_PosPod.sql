@@ -1,27 +1,26 @@
-﻿
-CREATE VIEW [Dealer].[View_PosPod]
+﻿CREATE VIEW Dealer.View_PosPod
 AS
 SELECT        Dealer.Dealer.IDDealer, Dealer.Dealer.Indirizzo, Dealer.Dealer.PIVA, Dealer.Dealer.Telefono, Dealer.Dealer.Fax, Dealer.Dealer.DataModifica, 
                          Dealer.Dealer.IDUtente, Dealer.Dealer.IDTipoDealer, Dealer.Dealer.IDStato, Dealer.Dealer.Codice, Dealer.Stato.NomeStato AS Stato, 
                          Dealer.TipoDealer.NomeTipoDealer, Area.Operativita.Operativita, Area.Tipologia.Tipologia, InfoGenerali.InfoGenerali.CodiceFornitore, 
-                         Area.AreaDiCompetenza.NomeArea AS AreaDiCompetenza, Dealer.CondizioniPagamento.NomeCondizioniPagamento AS CondizioniPagamento, 
-                         Dealer.Canale.NomeCanale, Negozio.Negozio.NomeTitolare, Negozio.Negozio.Supporti, Negozio.Cluster.Cluster, Vendite.Vendite.CAP, Vendite.Vendite.Localita, 
-                         Vendite.Vendite.Nome1, Utility.Provincia.Nome AS Provincia, Utility.Regione.Nome AS Regione, Disdetta.Disdetta.VecchioCodice, 
-                         Disdetta.Disdetta.DataTerminePreavviso, Disdetta.Disdetta.DataInvioDisdetta, Disdetta.Disdetta.GiorniPreavviso, Disdetta.Disdetta.Note, Utility.Zona.Nome AS Area, 
-                         Disdetta.DettaglioDisdetta.DataDisdetta, Vendite.VenditeCanali.Cliente, Vendite.VenditeCanali.GruppoPrezzi, Vendite.VenditeCanali.Magazzino, 
-                         Vendite.VenditeCanali.Nome2, Utenti.Funzionario.AGL AS CodiceFunzionario, Utenti.Funzionario.Nome AS Funzionario, 
-                         Utenti.AreaManager.VKBUR AS CodiceAreaManager, Utenti.AreaManager.Nome AS AreaManager, Negozio.NegozioPosPod.FT, Negozio.NegozioPosPod.FTE, 
-                         Negozio.NegozioPosPod.PT, Negozio.NegozioPosPod.NumeroVetrine, Negozio.NegozioPosPod.Insegna, Negozio.NegozioPosPod.Latitudine, 
-                         Negozio.NegozioPosPod.Longitudine, Negozio.NegozioPosPod.ShopInStore, Negozio.NegozioPosPod.ValoreAffitto, Negozio.TipologiaArredo.TipologiaArredo, 
-                         Catene.CatenePosPod.DatiCateneAM, Catene.CatenePosPod.DatiCateneFunzionario, Area.AreaPosPod.CentroCommerciale, 
-                         Area.AreaPosPod.MagazzinoCentralizzato, Area.AreaPosPod.NegozioTop, InfoGenerali.InfoPosEPod.BOL, InfoGenerali.InfoPosEPod.DataAperturaNegozio, 
+                         Dealer.CondizioniPagamento.NomeCondizioniPagamento AS CondizioniPagamento, Dealer.Canale.NomeCanale, Negozio.Negozio.NomeTitolare, 
+                         Negozio.Negozio.Supporti, Negozio.Cluster.Cluster, Vendite.Vendite.CAP, Vendite.Vendite.Localita, Vendite.Vendite.Nome1, Utility.Provincia.Nome AS Provincia, 
+                         Utility.Regione.Nome AS Regione, Disdetta.Disdetta.VecchioCodice, Disdetta.Disdetta.DataTerminePreavviso, Disdetta.Disdetta.DataInvioDisdetta, 
+                         Disdetta.Disdetta.GiorniPreavviso, Disdetta.Disdetta.Note, Disdetta.DettaglioDisdetta.DataDisdetta, Vendite.VenditeCanali.Cliente, 
+                         Vendite.VenditeCanali.GruppoPrezzi, Vendite.VenditeCanali.Magazzino, Vendite.VenditeCanali.Nome2, Utenti.Funzionario.AGL AS CodiceFunzionario, 
+                         Utenti.Funzionario.Nome AS Funzionario, Utenti.AreaManager.VKBUR AS CodiceAreaManager, Utenti.AreaManager.Nome AS AreaManager, 
+                         Negozio.NegozioPosPod.FT, Negozio.NegozioPosPod.FTE, Negozio.NegozioPosPod.PT, Negozio.NegozioPosPod.NumeroVetrine, Negozio.NegozioPosPod.Insegna,
+                          Negozio.NegozioPosPod.Latitudine, Negozio.NegozioPosPod.Longitudine, Negozio.NegozioPosPod.ShopInStore, Negozio.NegozioPosPod.ValoreAffitto, 
+                         Negozio.TipologiaArredo.TipologiaArredo, Catene.CatenePosPod.DatiCateneAM, Catene.CatenePosPod.DatiCateneFunzionario, Area.AreaPosPod.CentroCommerciale,
+                          Area.AreaPosPod.MagazzinoCentralizzato, Area.AreaPosPod.NegozioTop, InfoGenerali.InfoPosEPod.BOL, InfoGenerali.InfoPosEPod.DataAperturaNegozio, 
                          InfoGenerali.InfoPosEPod.CentroAssistenzaTecnica, ISNULL(Vendite.Vendite.Nome1, '') + ' ' + ISNULL(Vendite.VenditeCanali.Nome2, '') AS RagioneSociale, 
                          InfoGenerali.InfoPosEPod.DataChiusuraNegozio, InfoGenerali.InfoPosEPod.DataAperturaCodice, InfoGenerali.InfoPosEPod.DataChiusuraCodice, 
                          InfoGenerali.InfoGenerali.CodiceVogi, InfoGenerali.InfoGenerali.EMail, InfoGenerali.InfoGenerali.PEC, Negozio.Negozio.Telefono AS TelefonoNegozio, 
                          Negozio.Negozio.EmailTitolare, Negozio.Negozio.CFTitolare, Catene.TipoRemunerazione.TipoRemunerazione, Disdetta.Richiedente.Richiedente, 
-                         Area.SegmentazioneCanale.SegmentazioneCanale, Dealer.Dealer.DataModificaUtente, Dealer.Canale.IDCanale, Utility.Zona.IDZona AS IDArea, 
-                         Utility.Regione.IDRegione, Utility.Provincia.IDProvincia, Area.SegmentazioneCanale.IDSegmentazioneCanale, Negozio.Negozio.NomeContatto, 
-                         Negozio.DimensioneAreaVendita.DimensioneAreaVendita, Dealer.Canale.DescrizioneCanale AS Canale, Area.IDOperativita AS IDOperativita
+                         Area.SegmentazioneCanale.SegmentazioneCanale, Dealer.Dealer.DataModificaUtente, Dealer.Canale.IDCanale, Utility.Regione.IDRegione, 
+                         Utility.Provincia.IDProvincia, Area.SegmentazioneCanale.IDSegmentazioneCanale, Negozio.Negozio.NomeContatto, 
+                         Negozio.DimensioneAreaVendita.DimensioneAreaVendita, Dealer.Canale.DescrizioneCanale AS Canale, Area.Area.IDOperativita, Vendite.Vendite.IDArea, 
+                         AreaDiCompetenza_1.NomeArea AS Area, Area.AreaPosPod.IDAreaDiCompetenza, Area.AreaDiCompetenza.NomeArea AS AreaDiCompetenza
 FROM            Dealer.Dealer INNER JOIN
                          Dealer.Stato ON Dealer.Dealer.IDStato = Dealer.Stato.IDStato INNER JOIN
                          Dealer.TipoDealer ON Dealer.Dealer.IDTipoDealer = Dealer.TipoDealer.IDTipoDealer LEFT OUTER JOIN
@@ -34,7 +33,9 @@ FROM            Dealer.Dealer INNER JOIN
                          Area.AreaPosPod ON Area.Area.IDDealer = Area.AreaPosPod.IDDealer LEFT OUTER JOIN
                          Area.Operativita ON Area.Area.IDOperativita = Area.Operativita.IDOperativita LEFT OUTER JOIN
                          Area.Tipologia ON Area.Area.IDTipologia = Area.Tipologia.IDTipologia LEFT OUTER JOIN
-                         Area.AreaDiCompetenza ON Area.AreaPosPod.IDAreaDiCompetenza = Area.AreaDiCompetenza.IDAreaDiCompetenza LEFT OUTER JOIN
+                         Area.AreaDiCompetenza ON Area.AreaDiCompetenza.IDAreaDiCompetenza = Area.AreaPosPod.IDAreaDiCompetenza LEFT OUTER JOIN
+                         Vendite.Vendite ON Dealer.Dealer.IDDealer = Vendite.Vendite.IDDealer LEFT OUTER JOIN
+                         Area.AreaDiCompetenza AS AreaDiCompetenza_1 ON Vendite.Vendite.IDArea = AreaDiCompetenza_1.IDAreaDiCompetenza LEFT OUTER JOIN
                          Area.SegmentazioneCanale ON Area.AreaPosPod.IDSegmentazioneCanale = Area.SegmentazioneCanale.IDSegmentazioneCanale LEFT OUTER JOIN
                          Negozio.Negozio ON Dealer.Dealer.IDDealer = Negozio.Negozio.IDDealer LEFT OUTER JOIN
                          Negozio.Cluster ON Negozio.Negozio.IDCluster = Negozio.Cluster.IDCluster LEFT OUTER JOIN
@@ -45,7 +46,6 @@ FROM            Dealer.Dealer INNER JOIN
                          Catene.Catene ON Dealer.Dealer.IDDealer = Catene.Catene.IDDealer LEFT OUTER JOIN
                          Catene.TipoRemunerazione ON Catene.Catene.IDTipoRemunerazione = Catene.TipoRemunerazione.IDTipoRemunerazione LEFT OUTER JOIN
                          Catene.CatenePosPod ON Catene.Catene.IDDealer = Catene.CatenePosPod.IDDealer LEFT OUTER JOIN
-                         Vendite.Vendite ON Dealer.Dealer.IDDealer = Vendite.Vendite.IDDealer LEFT OUTER JOIN
                          Vendite.VenditeCanali ON Vendite.Vendite.IDDealer = Vendite.VenditeCanali.IDDealer LEFT OUTER JOIN
                          Disdetta.Disdetta ON Dealer.Dealer.IDDealer = Disdetta.Disdetta.IDDealer LEFT OUTER JOIN
                          Disdetta.DettaglioDisdetta ON Disdetta.Disdetta.IDDealer = Disdetta.DettaglioDisdetta.IDDealer LEFT OUTER JOIN
@@ -61,7 +61,19 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPaneCount', @value = 4, @leve
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane4', @value = N'idth = 1500
+EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane4', @value = N' = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
          Width = 1500
          Width = 1500
          Width = 1500
@@ -125,6 +137,12 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane4', @value = N'idth = 150
          Width = 1500
          Width = 1500
          Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
       End
    End
    Begin CriteriaPane = 
@@ -146,6 +164,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane4', @value = N'idth = 150
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'Dealer', @level1type = N'VIEW', @level1name = N'View_PosPod';
+
+
 
 
 
@@ -275,6 +295,16 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane3', @value = N'TipoRemune
             DisplayFlags = 280
             TopColumn = 0
          End
+         Begin Table = "AreaDiCompetenza_1"
+            Begin Extent = 
+               Top = 6
+               Left = 671
+               Bottom = 118
+               Right = 873
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
       End
    End
    Begin SQLPane = 
@@ -282,21 +312,11 @@ EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane3', @value = N'TipoRemune
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
-      Begin ColumnWidths = 77
+      Begin ColumnWidths = 83
          Width = 284
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         Width = 1500
-         W', @level0type = N'SCHEMA', @level0name = N'Dealer', @level1type = N'VIEW', @level1name = N'View_PosPod';
+         Width', @level0type = N'SCHEMA', @level0name = N'Dealer', @level1type = N'VIEW', @level1name = N'View_PosPod';
+
+
 
 
 

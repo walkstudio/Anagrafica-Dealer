@@ -63,6 +63,10 @@ white-space:nowrap;
     padding-bottom: 25px;
 }
 
+.lblLeftPad5px {
+    padding-left: 5px;
+}
+
 
 .imgBtn {
     width: 125px;
@@ -112,6 +116,10 @@ white-space:nowrap;
 .txtBoxLarge {
     width: 160px;
       margin-left: 6px;
+}
+
+.txtBoxLargeNoMargin {
+    width: 160px;
 }
 
 .txtBoxLargeCR {

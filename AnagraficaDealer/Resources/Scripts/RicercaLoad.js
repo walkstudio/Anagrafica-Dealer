@@ -232,12 +232,12 @@ function fnOKRegioni(result) {
     if (result != null) {
         //$("#ddlSRegione").append('<option value="" selected>Seleziona una Regione</option>');
 
-        //non serve con la combo multipla; lascio allRegions = ""
+        //non serve con la combo multipla;
         //for (var i = 0; i < result.length; i++) {
         //    allRegions += result[i].Value + (i == result.length - 1 ? "" : ",");
         //}
 
-        $("#ddlMRegione").append('<option id="ALL" value="' + allRegions + '">Tutte le Regioni</option>');
+        $("#ddlMRegione").append('<option id="ALL" value="0">Tutte le Regioni</option>');
     }
     for (var i = 0; i < result.length; i++) {
         $("#ddlMRegione").append('<option id="optR' + i + '" value="' + result[i].Value + '">' + result[i].Text + '</option>');
@@ -260,6 +260,10 @@ function fnOKRegioni(result) {
                 }
                 
             }
+
+            $.each(values.split(","), function (i, e) {
+                $("#ddlMRegione option[value='" + e + "']").prop("selected", true);
+            });
 
             $("#ExportchkIDRegione").prop("checked", !noItemSelected );
 
@@ -291,7 +295,7 @@ function fnOKProvince(result) {
     //$("#ddlMProvincia").prop("multiple", true);
     $("#ddlMProvincia").empty();
     //$("#ddlMProvincia").append('<option value="">Seleziona una Provincia</option>');
-    $("#ddlMProvincia").append('<option id="ALL" value="">Tutte le Province in lista</option>');
+    $("#ddlMProvincia").append('<option id="ALL" value="0">Tutte le Province in lista</option>');
     for (var i = 0; i < result.length; i++) {
         $("#ddlMProvincia").append('<option id="optP' + i + '" value="' + result[i].Value + '">' + result[i].Text + '</option>');
     }
@@ -314,6 +318,10 @@ function fnOKProvince(result) {
                 }
 
             }
+ 
+            $.each(values.split(","), function (i, e) {
+                $("#ddlMProvincia option[value='" + e + "']").prop("selected", true);
+            });
 
             $("#ExportchkIDProvincia").prop("checked", !noItemSelected );
             //$("#divLoad").show();
@@ -442,4 +450,23 @@ function fnOKAreaCompetenza(result) {
 function fnKOAreaCompetenza(result) {
     ShowMessage("Errore in fase di estrazione dell'Area di Competenza.<br/>Si prega di riprovare ", "html");
     ComboVLoaded = true;
+}
+
+function fnOKCentroAssistenzaTecnica(result) {
+    $("#ddlSTechAss").empty();
+    $("#ddlSTechAss").append('<option value="">Seleziona Centro Assistenza</option>');
+    if (result != null) {
+        for (var i = 0; i < result.length; i++) {
+            $("#ddlSTechAss").append('<option id="optTA' + i + '" value="' + result[i].Value + '">' + result[i].Text + '</option>');
+        }
+    }
+
+    //$("#ddlSTechAss").attr("style", "width:200px");
+
+    //ComboTALoaded = true;
+}
+
+function fnKOCentroAssistenzaTecnica(result) {
+    ShowMessage("Errore in fase di estrazione dei Centri di Assistenza Tecnica.<br/>Si prega di riprovare ", "html");
+    //ComboTALoaded = true;
 }

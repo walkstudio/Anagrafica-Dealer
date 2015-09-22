@@ -86,15 +86,20 @@
 
                 </tr>
                 <tr>
-                    <td class="tdSpace" rowspan="1" colspan="7">
+                    <td class="tdSpace" colspan="3">
                         <label class="lblSectionAmministazione tdSpace">Profilo utente</label>
+                    </td>
+                    <td colspan="3">
+                        <asp:Label ID="lblCodiceRuolo" runat="server" CssClass="lblSectionAmministazione tdSpace lblLeftPad5px" Text="Codice Ruolo"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="tdCol2Amministrazione" colspan="3">
-                        <asp:DropDownList ID="ddlProfiloUtente" runat="server" CssClass="ddlStyle ddlMedium" OnLoad="ddlProfiloUtente_Load"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlProfiloUtente" runat="server" CssClass="ddlStyle ddlMedium" OnLoad="ddlProfiloUtente_Load" OnSelectedIndexChanged="ddlProfiloUtente_Change" AutoPostBack="true"></asp:DropDownList>
                     </td>
-                    <td colspan="3"></td>
+                    <td colspan="3">
+                        <asp:TextBox ID="txtCodiceRuolo" runat="server" CssClass="textBox txtBoxLarge" Enabled="false"></asp:TextBox>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="6"></td>
@@ -112,7 +117,9 @@
             </table>
                 <uc1:PopupMessaggio runat="server" ID="PopupMessaggio" />
         </ContentTemplate>
-
+    <Triggers>
+        <asp:AsyncPostBackTrigger ControlID="ddlProfiloUtente" EventName="SelectedIndexChanged"/>
+    </Triggers>
     </asp:UpdatePanel>
 
 </asp:Content>

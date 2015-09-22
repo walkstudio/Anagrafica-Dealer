@@ -1,7 +1,8 @@
-C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerClassLib\bin\Debug\AnagraficaDealerClassLib.dll.config
-C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerClassLib\bin\Debug\AnagraficaDealerClassLib.dll
-C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerClassLib\bin\Debug\AnagraficaDealerClassLib.pdb
-C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerClassLib\bin\Debug\NLog.dll
-C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerClassLib\bin\Debug\NLog.xml
-C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerClassLib\obj\Debug\AnagraficaDealerClassLib.dll
-C:\Users\Nicola\Source\Workspaces\AnagraficaDealer\AnagraficaDealerClassLib\obj\Debug\AnagraficaDealerClassLib.pdb
+C:\Users\Nicola\VisualStudioRepos\AnagraficaDealer3\AnagraficaDealerClassLib\bin\Debug\AnagraficaDealerClassLib.dll.config
+C:\Users\Nicola\VisualStudioRepos\AnagraficaDealer3\AnagraficaDealerClassLib\bin\Debug\AnagraficaDealerClassLib.dll
+C:\Users\Nicola\VisualStudioRepos\AnagraficaDealer3\AnagraficaDealerClassLib\bin\Debug\AnagraficaDealerClassLib.pdb
+C:\Users\Nicola\VisualStudioRepos\AnagraficaDealer3\AnagraficaDealerClassLib\bin\Debug\NLog.dll
+C:\Users\Nicola\VisualStudioRepos\AnagraficaDealer3\AnagraficaDealerClassLib\bin\Debug\NLog.xml
+C:\Users\Nicola\VisualStudioRepos\AnagraficaDealer3\AnagraficaDealerClassLib\obj\Debug\AnagraficaDealerClassLib.csprojResolveAssemblyReference.cache
+C:\Users\Nicola\VisualStudioRepos\AnagraficaDealer3\AnagraficaDealerClassLib\obj\Debug\AnagraficaDealerClassLib.dll
+C:\Users\Nicola\VisualStudioRepos\AnagraficaDealer3\AnagraficaDealerClassLib\obj\Debug\AnagraficaDealerClassLib.pdb

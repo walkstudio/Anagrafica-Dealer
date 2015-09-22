@@ -104,6 +104,7 @@ namespace Spindox.AnagraficaDealer
                 portafoglioCheckBox.Checked=Convert.ToBoolean(dt.Rows[0]["Portafoglio"]);
                 relazioniDropDownList.SelectedValue = Convert.ToString(dt.Rows[0]["RagioniSocialiCorrelate"]);
                 eccezioniCheckBox.Checked = Convert.ToBoolean(dt.Rows[0]["Eccezioni"]);
+                ddlRuolo.SelectedValue = Convert.ToString(dt.Rows[0]["IDRuolo"]);
 
             }
             catch (Exception ex)
@@ -223,7 +224,9 @@ namespace Spindox.AnagraficaDealer
             myProfilo.RagioniSocialiCorrelate = Convert.ToInt32(relazioniDropDownList.SelectedValue);
             myProfilo.Eccezioni = eccezioniCheckBox.Checked;
 
-            List<TipoDealer> myTipoDealerList = new List<TipoDealer>();
+            myProfilo.IDRuolo = Convert.ToInt32(ddlRuolo.SelectedValue);
+
+                List<TipoDealer> myTipoDealerList = new List<TipoDealer>();
             foreach (DataRow dr in TipoDealerTable.Rows)
             {
                 TipoDealer myTipoDealer = new TipoDealer();
@@ -300,6 +303,17 @@ namespace Spindox.AnagraficaDealer
  
                 autorizzazioneCampiGridView.DataSource = proxyMtd.AutorizzazioneCampi_Get(IDProfilo);
                 autorizzazioneCampiGridView.DataBind();
+            }
+        }
+
+        protected void ddlRuolo_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                ddlRuolo.DataSource = proxyMtd.GetAllRuoli();
+                ddlRuolo.DataValueField = "IDRuolo";
+                ddlRuolo.DataTextField = "Ruolo";
+                ddlRuolo.DataBind();
             }
         }
     }

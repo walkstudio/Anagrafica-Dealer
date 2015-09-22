@@ -62,10 +62,10 @@ $(function () {
 
     $('#txtLocalita').autocomplete({
         source: function (request, response) {
-            if ($("#ddlSProvincia").val() == "") return;
+            //if ($("#ddlMProvincia").val() == "") return;
             $.ajax({
                 url: "Ricerca.aspx/GetLocalita",
-                data: "{ 'pre':'" + request.term + "','prov':'" + $("#ddlSProvincia").val() + "'}",
+                data: "{ 'pre':'" + request.term + "','prov':'" + $("#ddlMProvincia").val() + "','regione':'" + $("#ddlMRegione").val() + "'}",
                 dataType: "json",
                 type: "POST",
                 contentType: "application/json; charset=utf-8",
@@ -78,10 +78,11 @@ $(function () {
                     alert(textStatus);
                 }
             });
-        }
+        },
+        minLengh: 5
     });
 
-    $('#txtMasterDealerCode').autocomplete({
+    $('#txMasterDealerCode').autocomplete({
         source: function (request, response) {
             $.ajax({
                 url: "Ricerca.aspx/GetMasterDealers",
@@ -99,6 +100,47 @@ $(function () {
                 }
             });
         }
+    });
+
+    $('#txtFunzionario').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: "Ricerca.aspx/GetFunzionari",
+                data: "{ 'pre':'" + request.term + "'}",
+                dataType: "json",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    response($.map(data.d, function (item) {
+                        return { value: item }
+                    }))
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+        }
+    });
+
+    $('#txtSupporti').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: "Ricerca.aspx/GetSupporti",
+                data: "{ 'pre':'" + request.term + "'}",
+                dataType: "json",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    response($.map(data.d, function (item) {
+                        return { value: item }
+                    }))
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+        }
+        //, minLengh: 5
     });
     
     DisableSharedField();
@@ -202,6 +244,7 @@ function CheckRicercaAvanzata() {
     SelectedChoiceItems($("#ddlMCanale"), false);
     SelectedChoiceItems($("#ddlMArea"), false);
     SelectedChoiceItems($("#ddlSOperativita"), false);
+    SelectedChoiceItems($("#ddlSTechAss"), false);
 
 
     if ($("#lblChoices")[0].innerText == "")
@@ -408,6 +451,10 @@ $(document).ready(function () {
     PageMethods.GetInfoDealer("G", "", fnOKSegmentazione, fnKOSegmentazione);
     PageMethods.GetInfoDealer("CL", "", fnOKCluster, fnKOCluster);
     PageMethods.GetInfoDealer("AC", "", fnOKAreaCompetenza, fnKOAreaCompetenza);
+
+    //nuove aggiunte da NB
+    PageMethods.GetInfoDealer("TA", "", fnOKCentroAssistenzaTecnica, fnKOCentroAssistenzaTecnica);
+
     //modificato x combo a selez multiple
     PageMethods.GetInfoDealer("R", "", fnOKRegioni, fnKORegioni);
 

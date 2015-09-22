@@ -116,7 +116,7 @@ namespace AnagraficaDealerClassLib.Methods
             sqlop = new SqlOperations();
             sqlop.databaseConnection = ConfigurationManager.ConnectionStrings["cs"].ToString();
 
-            DbParameter[] dbp = new DbParameter[8];
+            DbParameter[] dbp = new DbParameter[9];
 
             dbp[0] = new SqlParameter();
             dbp[0].ParameterName = "Nome";
@@ -164,7 +164,13 @@ namespace AnagraficaDealerClassLib.Methods
             dbp[7].ParameterName = "Esiste";
             dbp[7].DbType = DbType.Boolean;
             dbp[7].Direction = ParameterDirection.Output;
-    
+
+            dbp[8] = new SqlParameter();
+            dbp[8].ParameterName = "CodRuolo";
+            dbp[8].DbType = DbType.String;
+            dbp[8].Direction = ParameterDirection.Input;
+            dbp[8].Value = String.IsNullOrEmpty(obj.CodRuolo) ? (object)DBNull.Value : obj.CodRuolo;
+
             SqlCommandObject sco = new SqlCommandObject();
             sco.SPName = "Utenti.SP_Utenti_Insert";
             sco.SPParams = dbp;
@@ -183,7 +189,7 @@ namespace AnagraficaDealerClassLib.Methods
             sqlop = new SqlOperations();
             sqlop.databaseConnection = ConfigurationManager.ConnectionStrings["cs"].ToString();
 
-            DbParameter[] dbp = new DbParameter[6];
+            DbParameter[] dbp = new DbParameter[7];
 
             dbp[0] = new SqlParameter();
             dbp[0].ParameterName = "IDUtente";
@@ -220,6 +226,12 @@ namespace AnagraficaDealerClassLib.Methods
             dbp[5].DbType = DbType.Int32;
             dbp[5].Direction = ParameterDirection.Input;
             dbp[5].Value = obj.IDProfilo;
+
+            dbp[6] = new SqlParameter();
+            dbp[6].ParameterName = "CodRuolo";
+            dbp[6].DbType = DbType.String;
+            dbp[6].Direction = ParameterDirection.Input;
+            dbp[6].Value = String.IsNullOrEmpty(obj.CodRuolo) ? (object)DBNull.Value : obj.CodRuolo;
 
             SqlCommandObject sco = new SqlCommandObject();
             sco.SPName = "Utenti.SP_Utenti_Update";
